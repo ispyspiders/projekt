@@ -1,7 +1,7 @@
 # Projekt - Träningsapp
 #### Av Kajsa Classon, HT24. DT071G – Programmering i C#.NET, Mittuniversitetet.
 
-En webbapplikation som fungerar som en personlig tränings assistent.
+En konsolapplikation som fungerar som en personlig tränings assistent.
 
 ### Uppgiftsbeskrivning
 Uppgiften går ut på att skapa en applikation i C# och använda ramverket .NET på ett valfritt sätt.
