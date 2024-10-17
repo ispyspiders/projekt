@@ -12,6 +12,8 @@ namespace ptApp
     {
         static void Main(string[] args)
         {
+            PtApp ptApp = new PtApp();
+
             while (true)
             {
                 // Skriv ut meny
