@@ -1,8 +1,7 @@
 // Klass för träningsapp. Agerar på User, Exercise och Workout
 // Skapad av Kajsa Classon, HT24.
 
-using Microsoft.Data.Sqlite;
-using Microsoft.VisualBasic; // Installeras med: 'dotnet add package Microsoft.Data.Sqlite'
+using Microsoft.Data.Sqlite; // Installeras med: 'dotnet add package Microsoft.Data.Sqlite'
 
 namespace ptApp
 {
@@ -81,7 +80,7 @@ namespace ptApp
                 // Skapa tabell om den inte finns WORKOUTS
                 createTableQuery =
                 @"
-                CREATE TABLE workout_exercises(
+                CREATE TABLE IF NOT EXISTS workout_exercises(
                     workout_exerciseId INTEGER PRIMARY KEY AUTOINCREMENT,
                     workoutId INTEGER,
                     exerciseId INTEGER,
@@ -95,8 +94,56 @@ namespace ptApp
                 {
                     command.ExecuteNonQuery();
                 }
-                
             }
+        }
+
+        public bool registerUser(string username, string password)
+        {
+            using (var connection = new SqliteConnection(connectionString))
+            {
+
+                PasswordHasher passwordhasher = new PasswordHasher();
+                string passwordHash = passwordhasher.Hash(password);
+
+                // Öppna connection
+                connection.Open();
+
+                string query = @"INSERT INTO users (username, password)
+                                VALUES
+                                (@Username, @PasswordHash);";
+
+                using (var command = new SqliteCommand(query, connection))
+                {
+                    command.Parameters.Add(new SqliteParameter("@Username", username));
+                    command.Parameters.Add(new SqliteParameter("@PasswordHash", passwordHash));
+
+                    using var reader = command.ExecuteReader();
+                    if(reader.HasRows) return true;
+                    else return false;
+                }
+            }
+
+        }
+
+        public bool getUserByName(string username)
+        {
+            using (var connection = new SqliteConnection(connectionString))
+            {
+                // Öppna connection
+                connection.Open();
+
+                string query = $@"SELECT username FROM users WHERE username=@Username;";
+                // Skicka query till db
+                using (var command = new SqliteCommand(query, connection))
+                {
+                    command.Parameters.Add(new SqliteParameter("@Username", username));
+
+                    using var reader = command.ExecuteReader();
+                    if (reader.HasRows) return true;
+                    else return false;
+                }
+            }
+
         }
     }
 }
