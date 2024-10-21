@@ -1,6 +1,7 @@
 // Klass för träningsapp. Agerar på User, Exercise och Workout
 // Skapad av Kajsa Classon, HT24.
 
+using System.Xml.XPath;
 using Microsoft.Data.Sqlite; // Installeras med: 'dotnet add package Microsoft.Data.Sqlite'
 
 namespace ptApp
@@ -97,6 +98,8 @@ namespace ptApp
             }
         }
 
+        #region Users
+        // Registrera en ny användare
         public bool registerUser(string username, string password)
         {
             using (var connection = new SqliteConnection(connectionString))
@@ -117,14 +120,14 @@ namespace ptApp
                     command.Parameters.Add(new SqliteParameter("@Username", username));
                     command.Parameters.Add(new SqliteParameter("@PasswordHash", passwordHash));
 
-                    using var reader = command.ExecuteReader();
-                    if(reader.HasRows) return true;
+                    int result = command.ExecuteNonQuery();
+                    if (result >= 1) return true;
                     else return false;
                 }
             }
-
         }
 
+        // Hämta användar
         public bool getUserByName(string username)
         {
             using (var connection = new SqliteConnection(connectionString))
@@ -143,7 +146,8 @@ namespace ptApp
                     else return false;
                 }
             }
-
         }
+
+        #endregion
     }
 }
