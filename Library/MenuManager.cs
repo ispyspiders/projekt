@@ -109,10 +109,18 @@ namespace ptApp
                         Console.ForegroundColor = ConsoleColor.Green; // Sätt textfärg till grön.
                         Console.WriteLine("Konto skapat!");
                         Console.ResetColor(); // Återställ textfärg
+                        Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
+                        Console.WriteLine($"\nFel vid registrering av konto.");
+                        Console.ResetColor(); // Återställ textfärg
+                        Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
                         Console.ReadKey();
                     }
                     break;
-
 
                 case 88: // X för exit
                     Environment.Exit(0);
