@@ -2,6 +2,7 @@
 // Skapad av Kajsa Classon, HT24.
 
 using System.ComponentModel;
+using System.Data;
 
 namespace ptApp
 {
@@ -14,8 +15,32 @@ namespace ptApp
     }
     public class MenuManager
     {
-        PtApp ptApp = new PtApp();
+        // PtApp ptApp = new PtApp();
+        User user = new User();
+        string? username; // Variabel för användarnamn
+        string? password; // Variabel för lösenord
+        string? loggedinUser = null; // Variabel för inloggad användare, null till en början
+        
 
+        public void DrawMenu()
+        {
+            MenuState menuState = MenuState.main;
+            if(loggedinUser is not null) menuState = MenuState.loggedIn;
+
+            switch (menuState)
+            {
+                case MenuState.main: 
+                DrawMainMenu();
+                break;
+                case MenuState.loggedIn: 
+                DrawLoggedinMenu();
+                break;
+                case MenuState.workout: 
+                break;
+            }
+        }
+
+        // Main menu, not logged in
         public void DrawMainMenu()
         {
             Console.WriteLine("T R Ä N I N G S D A G B O K \n\n");
@@ -29,12 +54,51 @@ namespace ptApp
             switch (input)
             {
                 case '1': // Logga in
+                    Console.Clear(); // Rensa skärm
+                    Console.CursorVisible = false; // släck cursor
+                    Console.WriteLine("L O G G A   I N\n\n");
+
+                    Console.Write("Användarnamn: ");
+                    Console.CursorVisible = true; // Tänd cursor
+                    username = Console.ReadLine();
+                    if (String.IsNullOrWhiteSpace(username)) // Är användarnamn null eller blanksteg skriv ut felmeddelande
+                    {
+                        Console.WriteLine("\nAnvändarnamn måste anges.");
+                        Console.ResetColor(); // Återställ textfärg
+                        Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        if (!user.GetUserByName(username)) // Finns användarnamnet inte i db
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
+                            Console.WriteLine($"\nIngen användare med användarnamn {username} finns i databasen.");
+                            Console.ResetColor(); // Återställ textfärg
+                            Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                            Console.ReadKey();
+                            break; // Avbryt
+                        }
+                        Console.Write("Lösenord: ");
+                        password = Console.ReadLine();
+                        if (String.IsNullOrWhiteSpace(password)) // Är lösenord null eller blanksteg skriv ut felmeddelande
+                        {
+                            Console.WriteLine("\nLösenord måste anges.");
+                            Console.ResetColor(); // Återställ textfärg
+                            Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                            Console.ReadKey();
+                        }
+                        else
+                        {
+                            if (user.LoginUser(username, password)) //Om inloggning lyckas
+                            {
+                                loggedinUser = username; // spara username i variabel för inloggad användare
+                            }
+                        }
+                    }
                     break;
 
                 case '2': // Skapa användare
-                    string? username; // Variabel för användarnamn
-                    string? password; // Variabel för lösenord
-
                     // ANVÄNDARNAMN
                     do
                     {
@@ -59,7 +123,7 @@ namespace ptApp
                     while (String.IsNullOrWhiteSpace(username)); // Så länge användarnamn är null eller blanksteg
 
                     // Kontroll om användarnamn redan finns i db
-                    if (ptApp.getUserByName(username))
+                    if (user.GetUserByName(username))
                     {
                         Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
                         Console.WriteLine($"\nEn användare med användarnamn {username} finns redan i databasen.");
@@ -103,7 +167,7 @@ namespace ptApp
                     }
                     while (String.IsNullOrWhiteSpace(password) || password.Length < 6);
 
-                    if (ptApp.registerUser(username, password))
+                    if (user.RegisterUser(username, password))
                     {
                         // ptApp.registerUser(username, password);
                         Console.ForegroundColor = ConsoleColor.Green; // Sätt textfärg till grön.
@@ -127,5 +191,34 @@ namespace ptApp
                     break;
             }
         }
+
+        // Main menu, user logged in
+        public void DrawLoggedinMenu()
+        {
+            Console.WriteLine("T R Ä N I N G S D A G B O K \n");
+            Console.WriteLine($"Inloggad som: {username}\n");
+
+            Console.WriteLine("1. Registrera pass");
+            Console.WriteLine("2. Uppdatera pass");
+            Console.WriteLine("3. Radera pass");
+
+            Console.WriteLine("\nX. Logga ut\n");
+
+            int input = (int)Console.ReadKey(true).Key;
+            switch (input)
+            {
+                case '1':
+                    break;
+                case '2':
+                    break;
+                case '3':
+                    break;
+                case 88: // x för logga ut
+                    loggedinUser = null;
+                    Console.Clear();
+                    break;
+            }
+        }
+
     }
 }

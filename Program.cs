@@ -19,7 +19,7 @@ namespace ptApp
                 // Skriv ut meny
                 Console.Clear();
                 Console.CursorVisible = false;
-                menuManager.DrawMainMenu();
+                menuManager.DrawMenu();
 
                 
             }
