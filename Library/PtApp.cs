@@ -8,8 +8,8 @@ namespace ptApp
 {
     public class PtApp
     {
-        const string databaseFile = "ptApp.db"; // Namn för databasfil
-        string connectionString = $"Data Source={databaseFile}";
+        private const string databaseFile = "ptApp.db"; // Namn för databasfil
+        public string connectionString = $"Data Source={databaseFile}";
 
         public PtApp()
         {
@@ -98,56 +98,5 @@ namespace ptApp
             }
         }
 
-        #region Users
-        // Registrera en ny användare
-        public bool registerUser(string username, string password)
-        {
-            using (var connection = new SqliteConnection(connectionString))
-            {
-
-                PasswordHasher passwordhasher = new PasswordHasher();
-                string passwordHash = passwordhasher.Hash(password);
-
-                // Öppna connection
-                connection.Open();
-
-                string query = @"INSERT INTO users (username, password)
-                                VALUES
-                                (@Username, @PasswordHash);";
-
-                using (var command = new SqliteCommand(query, connection))
-                {
-                    command.Parameters.Add(new SqliteParameter("@Username", username));
-                    command.Parameters.Add(new SqliteParameter("@PasswordHash", passwordHash));
-
-                    int result = command.ExecuteNonQuery();
-                    if (result >= 1) return true;
-                    else return false;
-                }
-            }
-        }
-
-        // Hämta användar
-        public bool getUserByName(string username)
-        {
-            using (var connection = new SqliteConnection(connectionString))
-            {
-                // Öppna connection
-                connection.Open();
-
-                string query = $@"SELECT username FROM users WHERE username=@Username;";
-                // Skicka query till db
-                using (var command = new SqliteCommand(query, connection))
-                {
-                    command.Parameters.Add(new SqliteParameter("@Username", username));
-
-                    using var reader = command.ExecuteReader();
-                    if (reader.HasRows) return true;
-                    else return false;
-                }
-            }
-        }
-
-        #endregion
     }
 }
