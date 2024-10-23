@@ -28,7 +28,7 @@ namespace ptApp
         {
             MenuState menuState = MenuState.main;
             if (loggedinUser is not null) menuState = MenuState.loggedIn;
-
+            if (activeWorkout is not null) menuState = MenuState.workout;
 
             switch (menuState)
             {
@@ -39,6 +39,7 @@ namespace ptApp
                     DrawLoggedinMenu();
                     break;
                 case MenuState.workout:
+                    DrawWorkoutMenu();
                     break;
             }
         }
@@ -355,7 +356,7 @@ namespace ptApp
                                 Console.CursorVisible = false; // släck cursor
                                 Console.ReadKey();
                             }
-                         
+
                         }
 
                     }
@@ -365,9 +366,9 @@ namespace ptApp
                     {
                         // userId = (int)loggedinUserId;
                         Workout woToReg = new Workout(userId, dateInput, int.Parse(durationInput), intensityInput);
-                        if (woToReg.RegisterWorkout() > 0)
+                        activeWorkout = woToReg.RegisterWorkout();
+                        if (activeWorkout > 0)
                         {
-
                             Console.ForegroundColor = ConsoleColor.Green; // Sätt textfärg till grön.
                             Console.WriteLine("Pass registrerat!");
                             Console.ResetColor(); // Återställ textfärg
@@ -398,5 +399,42 @@ namespace ptApp
             }
         }
 
+        // Pass-meny
+        public void DrawWorkoutMenu()
+        {
+            Console.WriteLine($"T R Ä N I N G S P A S S   {activeWorkout}\n\n");
+
+            // Skriv ut pass information
+
+            // Skriv ut övningar
+
+            Console.WriteLine($"\n---------------------------------\n");
+
+            Console.WriteLine("1. Registrera övning ");
+            Console.WriteLine("2. Uppdatera övning");
+            Console.WriteLine("3. Radera övning");
+
+            Console.WriteLine("\n4. Redigera passinformation");
+
+            Console.WriteLine("\nX. Avbryt\n");
+
+            int input = (int)Console.ReadKey(true).Key;
+            switch (input)
+            {
+                case '1':
+                break;
+                case '2':
+                break;
+                case '3':
+                break;
+                case '4':
+                break;
+                
+                case 88: // Avbryt, backar till inloggad användares meny genom att sätta activeWorkout till null och ladda om.
+                activeWorkout = null;
+                Console.Clear();
+                break;
+            } 
+        }
     }
 }
