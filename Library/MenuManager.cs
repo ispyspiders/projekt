@@ -21,7 +21,7 @@ namespace ptApp
         string? password; // Variabel för lösenord
         string? loggedinUser = null; // Variabel för inloggad användare, null till en början
         int? loggedinUserId = null; // Variabel för inloggad användares id, null till en början
-
+        int userId;
 
         public void DrawMenu()
         {
@@ -220,6 +220,155 @@ namespace ptApp
             switch (input)
             {
                 case '1': // Registrera pass
+                    string? dateInput;
+                    string? durationInput;
+                    string? intensityInput;
+
+                    // DATUM FÖR PASS
+                    do
+                    {
+                        Console.Clear(); // Rensa skärm
+                        Console.CursorVisible = false; // släck cursor
+                        Console.WriteLine("R E G I S T R E R A   P A S S\n\n");
+
+                        // Datum för pass
+                        Console.Write("Datum för pass (DD-MM-YYYY): ");
+                        Console.CursorVisible = true; // Tänd cursor
+                        dateInput = Console.ReadLine(); // läs in input
+
+                        if (String.IsNullOrWhiteSpace(dateInput)) // Har datuminput inte ett innehåll, skriv ut felmeddelande
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
+                            Console.WriteLine($"\nDatum måste anges.");
+                            Console.ResetColor(); // Återställ textfärg
+                            Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                            Console.CursorVisible = false; // släck cursor
+                            Console.ReadKey();
+                        }
+                        else
+                        {
+                            if (!Workout.CheckIfValidDate(dateInput))
+                            {
+                                // OBS! Felmeddelanden skrivs ut från CheckIfValidDate.
+                                Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                                Console.CursorVisible = false; // släck cursor
+                                Console.ReadKey();
+                                dateInput = null;
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                    }
+                    while (String.IsNullOrWhiteSpace(dateInput));
+
+                    // TIDSÅTGÅNG
+                    do
+                    {
+                        Console.Clear(); // Rensa skärm
+                        Console.CursorVisible = false; // släck cursor
+                        Console.WriteLine("R E G I S T R E R A   P A S S\n\n");
+
+                        Console.Write($"Datum för pass: {dateInput}\n");
+
+                        // Tidsåtgång
+                        Console.Write("Tidsåtgång (minuter): ");
+                        Console.CursorVisible = true; // Tänd cursor
+                        durationInput = Console.ReadLine(); // läs in input
+
+                        if (String.IsNullOrWhiteSpace(durationInput)) // Kontroll att input inte är null eller blanksteg
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
+                            Console.WriteLine($"\nTidsåtgång måste anges. Vänligen ange tidsåtgång i hela minuter.");
+                            Console.ResetColor(); // Återställ textfärg
+                            Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                            Console.CursorVisible = false; // släck cursor
+                            Console.ReadKey();
+                        }
+                        else
+                        {
+                            if (!int.TryParse(durationInput, out int duration)) // kontroll att tidsåtgång är numeriskt
+                            {
+                                durationInput = null; // sätt input till null så att vi fortsättrer loopen
+                                Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
+                                Console.WriteLine($"\nTidsåtgång ej numeriskt. Vänligen ange tidsåtgång i hela minuter.");
+                                Console.ResetColor(); // Återställ textfärg
+                                Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                                Console.CursorVisible = false; // släck cursor
+                                Console.ReadKey();
+                            }
+                            if (duration < 0) // kontroll att tidsåtgång inte är negativt
+                            {
+                                durationInput = null; // sätt input till null så att vi fortsättrer loopen
+                                Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
+                                Console.WriteLine($"\nTidsåtgång får ej vara negativt. Vänligen ange tidsåtgång i hela minuter.");
+                                Console.ResetColor(); // Återställ textfärg
+                                Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                                Console.CursorVisible = false; // släck cursor
+                                Console.ReadKey();
+                            }
+                        }
+                    }
+                    while (String.IsNullOrWhiteSpace(durationInput));
+
+                    // INTENSITET
+                    do
+                    {
+                        Console.Clear(); // Rensa skärm
+                        Console.CursorVisible = false; // släck cursor
+                        Console.WriteLine("R E G I S T R E R A   P A S S\n\n");
+
+                        Console.WriteLine($"Datum för pass: {dateInput}");
+                        Console.WriteLine($"Tidsåtgång: {durationInput}\n");
+
+                        // Intensitet
+                        Console.Write("Intensitet (Låg/Medel/Hög): ");
+                        Console.CursorVisible = true; // Tänd cursor
+                        intensityInput = Console.ReadLine(); // läs in input
+                        if (String.IsNullOrWhiteSpace(intensityInput))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
+                            Console.WriteLine($"\nIntensitet måste anges. Vänligen ange Låg, Medel eller Hög.");
+                            Console.ResetColor(); // Återställ textfärg
+                            Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                            Console.CursorVisible = false; // släck cursor
+                            Console.ReadKey();
+                        }
+                        else
+                        {
+                            if (!Enum.TryParse<Intensity>(intensityInput, true, out Intensity intensity))
+                            {
+                                intensityInput = null;
+                                Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
+                                Console.WriteLine($"\nOgiltigt värde! Vänligen ange Låg, Medel eller Hög.");
+                                Console.ResetColor(); // Återställ textfärg
+                                Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                                Console.CursorVisible = false; // släck cursor
+                                Console.ReadKey();
+                            }
+                            else
+                            {
+
+                            }
+                        }
+
+                    }
+                    while (String.IsNullOrWhiteSpace(intensityInput));
+
+                    if (loggedinUserId is not null)
+                    {
+                        userId = (int)loggedinUserId;
+                        Workout woToReg = new Workout(userId, dateInput, int.Parse(durationInput), intensityInput);
+                        if (woToReg.RegisterWorkout())
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green; // Sätt textfärg till grön.
+                            Console.WriteLine("Registrerat!");
+                            Console.ResetColor(); // Återställ textfärg
+                            Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                            Console.ReadKey();
+                        }
+                    }
                     break;
                 case '2':
                     break;
