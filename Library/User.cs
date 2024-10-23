@@ -70,18 +70,75 @@ namespace ptApp
                 connection.Open();
 
                 string query = $@"SELECT userId FROM users WHERE username=@Username;";
-                using(var command = new SqliteCommand(query, connection))
+                using (var command = new SqliteCommand(query, connection))
                 {
                     command.Parameters.Add(new SqliteParameter("@Username", username));
-                    
+
                     object? result = command.ExecuteScalar();
 
-                    if(result == null) return null;
-                    if(result is int userId) return userId;
+                    if (result == null) return null;
+                    if (result is int userId) return userId;
                     return Convert.ToInt32(result); // Om resultat är av annan typ konvertera till int
-                    
+
                 }
             }
+        }
+
+        public int? getUsersTotalWorkoutTime(int userId)
+        {
+            string query = $@"SELECT SUM(duration) FROM workouts WHERE userId=@id";
+            using (var connection = new SqliteConnection(ptApp.connectionString))
+            {
+                connection.Open();
+
+                using (var command = new SqliteCommand(query, connection))
+                {
+                    command.Parameters.Add(new SqliteParameter("@id", userId));
+
+                    object? result = command.ExecuteScalar();
+                    if (result == null) return null;
+                    if (result is int sum) return sum;
+                    return Convert.ToInt32(result);
+                }
+            }
+        }
+
+        public List<Workout> GetWorkoutsForUserId(int userId)
+        {
+            string query = $@"SELECT * FROM workouts WHERE userId=@id";
+            var workouts = new List<Workout>(); //Variabel för lista med träningspass
+
+            try
+            {
+                using var connection = new SqliteConnection(ptApp.connectionString);
+                connection.Open(); // Öppna db anslutning
+
+                using var command = new SqliteCommand(query, connection);
+                command.Parameters.AddWithValue("@id", userId);
+
+                using var reader = command.ExecuteReader(); // Läs in svar från db
+                if (reader.HasRows)
+                {
+                    while (reader.Read()) // Så länge det finns workouts att läsa ut
+                    {
+                        Workout workout = new Workout // Skapa ett nytt workout-objekt
+                        {
+                            Id = reader.GetInt32(reader.GetOrdinal("workoutId")),
+                            UserId = reader.GetInt32(reader.GetOrdinal("userId")),
+                            DateTime = reader.GetDateTime(reader.GetOrdinal("date")),
+                            Duration = reader.GetInt32(reader.GetOrdinal("duration")),
+                            Intensity = (Intensity)Enum.Parse(typeof(Intensity), reader.GetString(reader.GetOrdinal("intensity")), true)
+                        };
+                        workouts.Add(workout); //lägg till i lista
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ett fel inträffade: {ex.Message}");
+            }
+
+            return workouts;
         }
 
         // Logga in användare
