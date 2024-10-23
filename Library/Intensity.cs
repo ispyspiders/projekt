@@ -5,8 +5,8 @@ namespace ptApp
 {
     public enum Intensity
     {
-        Easy,
-        Medium,
-        Hard
+        Låg,
+        Medel,
+        Hög
     }
 }
