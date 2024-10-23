@@ -121,11 +121,12 @@ namespace ptApp
                 {
                     while (reader.Read()) // Så länge det finns workouts att läsa ut
                     {
+                        string dateString = reader.GetString(reader.GetOrdinal("date"));
                         Workout workout = new Workout // Skapa ett nytt workout-objekt
                         {
                             Id = reader.GetInt32(reader.GetOrdinal("workoutId")),
                             UserId = reader.GetInt32(reader.GetOrdinal("userId")),
-                            DateTime = reader.GetDateTime(reader.GetOrdinal("date")),
+                            DateTime = DateTime.ParseExact(dateString,"dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture),
                             Duration = reader.GetInt32(reader.GetOrdinal("duration")),
                             Intensity = (Intensity)Enum.Parse(typeof(Intensity), reader.GetString(reader.GetOrdinal("intensity")), true)
                         };
@@ -135,7 +136,7 @@ namespace ptApp
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Ett fel inträffade: {ex.Message}");
+                Console.WriteLine($"Ett fel inträffade vid inläsning av träningspass: {ex.Message}");
             }
 
             return workouts;

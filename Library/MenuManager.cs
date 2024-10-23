@@ -22,12 +22,13 @@ namespace ptApp
         string? loggedinUser = null; // Variabel för inloggad användare, null till en början
         int? loggedinUserId = null; // Variabel för inloggad användares id, null till en början
         int userId;
-
+        int? activeWorkout = null;
 
         public void DrawMenu()
         {
             MenuState menuState = MenuState.main;
             if (loggedinUser is not null) menuState = MenuState.loggedIn;
+
 
             switch (menuState)
             {
@@ -258,7 +259,9 @@ namespace ptApp
                         {
                             if (!Workout.CheckIfValidDate(dateInput))
                             {
-                                // OBS! Felmeddelanden skrivs ut från CheckIfValidDate.
+                                Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
+                                Console.WriteLine($"\nOgiltigt datumformat.");
+                                Console.ResetColor(); // Återställ textfärg                                
                                 Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
                                 Console.CursorVisible = false; // släck cursor
                                 Console.ReadKey();
@@ -365,10 +368,20 @@ namespace ptApp
                     {
                         // userId = (int)loggedinUserId;
                         Workout woToReg = new Workout(userId, dateInput, int.Parse(durationInput), intensityInput);
-                        if (woToReg.RegisterWorkout())
+                        if (woToReg.RegisterWorkout() > 0)
                         {
+
                             Console.ForegroundColor = ConsoleColor.Green; // Sätt textfärg till grön.
                             Console.WriteLine("Pass registrerat!");
+                            Console.ResetColor(); // Återställ textfärg
+                            Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                            Console.CursorVisible = false; // släck cursor
+                            Console.ReadKey();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
+                            Console.WriteLine($"\nFel vid registrering av pass.");
                             Console.ResetColor(); // Återställ textfärg
                             Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
                             Console.CursorVisible = false; // släck cursor
