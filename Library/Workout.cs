@@ -28,7 +28,7 @@ namespace ptApp
             DateTime = DateTime.ParseExact(datetime, "dd-MM-yyyy", CultureInfo.InvariantCulture);
             Duration = duration;
             Intensity enumIntensity;
-            Enum.TryParse(intensity, out enumIntensity);
+            Enum.TryParse(intensity,true, out enumIntensity);
             Intensity = enumIntensity;
         }
 
@@ -75,6 +75,11 @@ namespace ptApp
             bool isNotInFuture = parsedDate <= DateTime.Now;
 
             return isValidFormat && isNotInFuture;
+        }
+
+        public static bool CheckIfValidIntensity(string input)
+        {
+            return Enum.TryParse<Intensity>(input, true, out _);
         }
     }
 }

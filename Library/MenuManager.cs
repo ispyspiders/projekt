@@ -345,7 +345,7 @@ namespace ptApp
                         }
                         else
                         {
-                            if (!Enum.TryParse<Intensity>(intensityInput, true, out Intensity intensity))
+                            if (!Workout.CheckIfValidIntensity(intensityInput))
                             {
                                 intensityInput = null;
                                 Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
@@ -355,10 +355,7 @@ namespace ptApp
                                 Console.CursorVisible = false; // släck cursor
                                 Console.ReadKey();
                             }
-                            else
-                            {
-
-                            }
+                         
                         }
 
                     }
