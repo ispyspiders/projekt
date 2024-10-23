@@ -20,23 +20,24 @@ namespace ptApp
         string? username; // Variabel för användarnamn
         string? password; // Variabel för lösenord
         string? loggedinUser = null; // Variabel för inloggad användare, null till en början
-        
+        int? loggedinUserId = null; // Variabel för inloggad användares id, null till en början
+
 
         public void DrawMenu()
         {
             MenuState menuState = MenuState.main;
-            if(loggedinUser is not null) menuState = MenuState.loggedIn;
+            if (loggedinUser is not null) menuState = MenuState.loggedIn;
 
             switch (menuState)
             {
-                case MenuState.main: 
-                DrawMainMenu();
-                break;
-                case MenuState.loggedIn: 
-                DrawLoggedinMenu();
-                break;
-                case MenuState.workout: 
-                break;
+                case MenuState.main:
+                    DrawMainMenu();
+                    break;
+                case MenuState.loggedIn:
+                    DrawLoggedinMenu();
+                    break;
+                case MenuState.workout:
+                    break;
             }
         }
 
@@ -93,6 +94,7 @@ namespace ptApp
                             if (user.LoginUser(username, password)) //Om inloggning lyckas
                             {
                                 loggedinUser = username; // spara username i variabel för inloggad användare
+                                loggedinUserId = user.GetUserId(username); // spara id i variabel för inloggad användare
                             }
                         }
                     }
@@ -196,7 +198,11 @@ namespace ptApp
         public void DrawLoggedinMenu()
         {
             Console.WriteLine("T R Ä N I N G S D A G B O K \n");
-            Console.WriteLine($"Inloggad som: {username}\n");
+            Console.WriteLine($"Inloggad som: {username}");
+            Console.WriteLine($"Antal tränade pass: ?");
+            Console.WriteLine($"Total träningstid: ? \n");
+
+            Console.WriteLine($"---------------------------------\n");
 
             Console.WriteLine("1. Registrera pass");
             Console.WriteLine("2. Uppdatera pass");
@@ -204,10 +210,16 @@ namespace ptApp
 
             Console.WriteLine("\nX. Logga ut\n");
 
+            Console.WriteLine($"---------------------------------\n");
+
+            Console.WriteLine("Mina pass");
+
+
+
             int input = (int)Console.ReadKey(true).Key;
             switch (input)
             {
-                case '1':
+                case '1': // Registrera pass
                     break;
                 case '2':
                     break;
@@ -215,6 +227,7 @@ namespace ptApp
                     break;
                 case 88: // x för logga ut
                     loggedinUser = null;
+                    loggedinUserId = null;
                     Console.Clear();
                     break;
             }

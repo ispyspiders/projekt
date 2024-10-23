@@ -1,6 +1,7 @@
 // Klass för användare
 // Skapad av Kajsa Classon, HT24.
 using System.Data;
+using System.Text;
 using Microsoft.Data.Sqlite; // Installeras med: 'dotnet add package Microsoft.Data.Sqlite'
 
 namespace ptApp
@@ -61,6 +62,28 @@ namespace ptApp
             }
         }
 
+        public int? GetUserId(string username)
+        {
+            using (var connection = new SqliteConnection(ptApp.connectionString))
+            {
+                // Öppna connection
+                connection.Open();
+
+                string query = $@"SELECT userId FROM users WHERE username=@Username;";
+                using(var command = new SqliteCommand(query, connection))
+                {
+                    command.Parameters.Add(new SqliteParameter("@Username", username));
+                    
+                    object? result = command.ExecuteScalar();
+
+                    if(result == null) return null;
+                    if(result is int userId) return userId;
+                    return Convert.ToInt32(result); // Om resultat är av annan typ konvertera till int
+                    
+                }
+            }
+        }
+
         // Logga in användare
         public bool LoginUser(string username, string passwordInput)
         {
@@ -82,7 +105,8 @@ namespace ptApp
                             PasswordHasher passwordhasher = new PasswordHasher();
                             bool result = passwordhasher.Validate(retrievedPassword, passwordInput);
                             return result;
-                        } else return false;
+                        }
+                        else return false;
                     }
                 }
             }
@@ -91,8 +115,6 @@ namespace ptApp
                 Console.WriteLine(ex.Message);
                 return false;
             }
-
-
         }
 
     }
