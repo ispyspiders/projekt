@@ -18,10 +18,14 @@ namespace ptApp
 
         private PtApp ptApp = new PtApp(); // DB-connection
 
+        public Workout()
+        {
+
+        }
         public Workout(int userId, string datetime, int duration, string intensity)
         {
             UserId = userId;
-            DateTime = DateTime.ParseExact(datetime,"d-M-yyyy", CultureInfo.InvariantCulture);
+            DateTime = DateTime.ParseExact(datetime, "d-M-yyyy", CultureInfo.InvariantCulture);
             Duration = duration;
             Intensity enumIntensity;
             Enum.TryParse(intensity, out enumIntensity);
