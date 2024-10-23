@@ -23,6 +23,7 @@ namespace ptApp
         int? loggedinUserId = null; // Variabel för inloggad användares id, null till en början
         int userId;
 
+
         public void DrawMenu()
         {
             MenuState menuState = MenuState.main;
@@ -197,10 +198,14 @@ namespace ptApp
         // Main menu, user logged in
         public void DrawLoggedinMenu()
         {
+            if (loggedinUserId is not null) { userId = (int)loggedinUserId; }
+            // Hämta användarens samtliga pass
+            List<Workout> activeUsersWorkouts = user.GetWorkoutsForUserId(userId);
+
             Console.WriteLine("T R Ä N I N G S D A G B O K \n");
             Console.WriteLine($"Inloggad som: {username}");
-            Console.WriteLine($"Antal tränade pass: ?");
-            Console.WriteLine($"Total träningstid: ? \n");
+            Console.WriteLine($"Antal tränade pass: {activeUsersWorkouts.Count}");
+            Console.WriteLine($"Total träningstid: {user.getUsersTotalWorkoutTime(userId)} min");
 
             Console.WriteLine($"---------------------------------\n");
 
@@ -212,9 +217,13 @@ namespace ptApp
 
             Console.WriteLine($"---------------------------------\n");
 
+            // ANVÄNDARES PASS
             Console.WriteLine("Mina pass");
-
-
+            // skriv ut pass till konsol
+            foreach (Workout workout in activeUsersWorkouts)
+            {
+                Console.WriteLine($"[{workout.Id}] {workout.DateTime:dd-MM-yyyy}, {workout.Duration} min, {workout.Intensity} intensitet");
+            }
 
             int input = (int)Console.ReadKey(true).Key;
             switch (input)
@@ -254,10 +263,6 @@ namespace ptApp
                                 Console.CursorVisible = false; // släck cursor
                                 Console.ReadKey();
                                 dateInput = null;
-                            }
-                            else
-                            {
-
                             }
                         }
                     }
@@ -358,14 +363,15 @@ namespace ptApp
 
                     if (loggedinUserId is not null)
                     {
-                        userId = (int)loggedinUserId;
+                        // userId = (int)loggedinUserId;
                         Workout woToReg = new Workout(userId, dateInput, int.Parse(durationInput), intensityInput);
                         if (woToReg.RegisterWorkout())
                         {
                             Console.ForegroundColor = ConsoleColor.Green; // Sätt textfärg till grön.
-                            Console.WriteLine("Registrerat!");
+                            Console.WriteLine("Pass registrerat!");
                             Console.ResetColor(); // Återställ textfärg
                             Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                            Console.CursorVisible = false; // släck cursor
                             Console.ReadKey();
                         }
                     }
