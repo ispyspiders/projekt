@@ -134,7 +134,8 @@ namespace ptApp
                     }
                 }
             }
-            catch (Exception ex)
+            // Fånga misslyckad inläsning.
+            catch (Exception ex) 
             {
                 Console.WriteLine($"Ett fel inträffade vid inläsning av träningspass: {ex.Message}");
             }
