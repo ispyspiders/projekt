@@ -86,26 +86,32 @@ namespace ptApp
 
         public int? getUsersTotalWorkoutTime(int userId)
         {
+            int totalDuration = 0;
             string query = $@"SELECT SUM(duration) FROM workouts WHERE userId=@id";
-            using (var connection = new SqliteConnection(ptApp.connectionString))
+            try
             {
+                using var connection = new SqliteConnection(ptApp.connectionString);
                 connection.Open();
 
-                using (var command = new SqliteCommand(query, connection))
-                {
-                    command.Parameters.Add(new SqliteParameter("@id", userId));
+                using var command = new SqliteCommand(query, connection);
+                command.Parameters.Add(new SqliteParameter("@id", userId));
 
-                    object? result = command.ExecuteScalar();
-                    if (result == null) return null;
-                    if (result is int sum) return sum;
-                    return Convert.ToInt32(result);
+                object? result = command.ExecuteScalar(); // läs ut ett värde från db
+                if (result != DBNull.Value) // Om resultatet inte är null från db
+                {
+                    totalDuration = Convert.ToInt32(result); // konvertera till int
                 }
             }
+            catch (Exception ex)
+            { 
+                Console.WriteLine($"Ett fel inträffade vid hämtning av total träningstid: {ex.Message}");
+            }
+            return totalDuration;
         }
 
         public List<Workout> GetWorkoutsForUserId(int userId)
         {
-            string query = $@"SELECT * FROM workouts WHERE userId=@id";
+            string query = $@"SELECT * FROM workouts WHERE userId=@id ORDER BY date;";
             var workouts = new List<Workout>(); //Variabel för lista med träningspass
 
             try
@@ -126,7 +132,7 @@ namespace ptApp
                         {
                             Id = reader.GetInt32(reader.GetOrdinal("workoutId")),
                             UserId = reader.GetInt32(reader.GetOrdinal("userId")),
-                            DateTime = DateTime.ParseExact(dateString,"dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture),
+                            DateTime = DateTime.ParseExact(dateString, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture),
                             Duration = reader.GetInt32(reader.GetOrdinal("duration")),
                             Intensity = (Intensity)Enum.Parse(typeof(Intensity), reader.GetString(reader.GetOrdinal("intensity")), true)
                         };
@@ -135,7 +141,7 @@ namespace ptApp
                 }
             }
             // Fånga misslyckad inläsning.
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Console.WriteLine($"Ett fel inträffade vid inläsning av träningspass: {ex.Message}");
             }
