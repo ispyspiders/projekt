@@ -52,16 +52,33 @@ namespace ptApp
 
                     if (result > 0)
                     {
-                        command.CommandText = "SELECT last_insert_rowid();";
-                        return Convert.ToInt32(command.ExecuteScalar());
+                        command.CommandText = "SELECT last_insert_rowid();"; // Läs ut id för den senast tillagda raden
+                        return Convert.ToInt32(command.ExecuteScalar()); // Returnera id för den skapade raden
                     }
                     else
                     {
                         throw new Exception("Inget träningspass registrerades.");
                     }
-                    // if (result >= 1) return true;
-                    // else return false;
                 }
+            }
+        }
+
+        public bool DeleteWorkout(int workoutId)
+        {
+            try
+            {
+                using var connection = new SqliteConnection(ptApp.connectionString);
+                connection.Open(); // öppna db-anslutning
+                string query = @"DELETE FROM workouts WHERE workoutId=@WorkoutId;";
+                using var command = new SqliteCommand(query, connection);
+                command.Parameters.AddWithValue("@WorkoutId", workoutId);
+                int result = command.ExecuteNonQuery();
+                return result > 0; // Om resultatet är mer än 0 returneras true, är det 0 returneras false
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ett fel inträffade vid radering av workout: {ex.Message}");
+                return false;
             }
         }
 
