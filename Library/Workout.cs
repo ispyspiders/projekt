@@ -28,7 +28,7 @@ namespace ptApp
             DateTime = DateTime.ParseExact(datetime, "dd-MM-yyyy", CultureInfo.InvariantCulture);
             Duration = duration;
             Intensity enumIntensity;
-            Enum.TryParse(intensity,true, out enumIntensity);
+            Enum.TryParse(intensity, true, out enumIntensity);
             Intensity = enumIntensity;
         }
 
@@ -63,6 +63,86 @@ namespace ptApp
                     // else return false;
                 }
             }
+        }
+
+        public Workout? GetWorkoutInfo(int workoutId)
+        {
+            string query = @"SELECT * FROM workouts WHERE workoutId=@WorkoutId;";
+            try
+            {
+                using var connection = new SqliteConnection(ptApp.connectionString);
+                connection.Open(); // Öppna db anlutning
+
+                using var command = new SqliteCommand(query, connection);
+                command.Parameters.AddWithValue("@WorkoutId", workoutId);
+                using var reader = command.ExecuteReader(); //Läs in svar från db
+                if (reader.Read())
+                {
+                    string dateString = reader.GetString(reader.GetOrdinal("date"));
+                    Workout workout = new Workout
+                    {
+                        Id = reader.GetInt32(reader.GetOrdinal("workoutId")),
+                        UserId = reader.GetInt32(reader.GetOrdinal("userId")),
+                        DateTime = DateTime.ParseExact(dateString, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture),
+                        Duration = reader.GetInt32(reader.GetOrdinal("duration")),
+                        Intensity = (Intensity)Enum.Parse(typeof(Intensity), reader.GetString(reader.GetOrdinal("intensity")), true)
+                    };
+                    return workout;
+                }
+                else
+                {
+                    return null; // Inget pass hittades
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ett fel inträffade vid inläsning av passinformation: {ex.Message}");
+                return null;
+            }
+        }
+
+        public List<Exercise> GetExercisesForWorkout(int workoutId)
+        {
+            var exercises = new List<Exercise>(); //Lista med exercise-objekt
+
+            // Query: Hämta ut id, namn, reps och vikt från exercises, för valt workoutId. Där exerciseId i exercises motsvarar  exerciseId i workout_exercises
+            string query = @"
+            SELECT e.exerciseId, e.exerciseName, e.reps, e.weight
+            FROM exercises e
+            JOIN workout_exercises w_e
+            ON e.exerciseId = w_e.exerciseId
+            WHERE w_e.workoutId = @WorkoutId
+            ;";
+
+            try
+            {
+                using var connection = new SqliteConnection(ptApp.connectionString);
+                connection.Open(); // Öppna db anlutning
+
+                using var command = new SqliteCommand(query, connection);
+                command.Parameters.AddWithValue("@WorkoutId", workoutId);
+
+                using var reader = command.ExecuteReader(); //läs in svar från db
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    { // så länge det finns övningar att läsa ut
+                        Exercise exercise = new Exercise // Skapa nytt övnings-objekt
+                        {
+                            Id = reader.GetInt32(reader.GetOrdinal("exerciseId")),
+                            Name = reader.GetString(reader.GetOrdinal("exerciseName")),
+                            Reps = reader.GetInt32(reader.GetOrdinal("reps")),
+                            Weight = reader.GetInt32(reader.GetOrdinal("weight"))
+                        };
+                        exercises.Add(exercise); // Lägg till övning i lista med övningar
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ett fel inträffade vid inläsning av övningar: {ex.Message}");
+            }
+            return exercises;
         }
 
         // Kontrollerar en sträng om den har formatet DD-MM-YYYY
