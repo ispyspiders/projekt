@@ -17,6 +17,7 @@ namespace ptApp
     {
         // PtApp ptApp = new PtApp();
         User user = new User();
+        Workout wo = new Workout();
         string? username; // Variabel för användarnamn
         string? password; // Variabel för lösenord
         string? loggedinUser = null; // Variabel för inloggad användare, null till en början
@@ -404,10 +405,36 @@ namespace ptApp
         {
             Console.WriteLine($"T R Ä N I N G S P A S S   {activeWorkout}\n\n");
 
-            // Skriv ut pass information
+            if (activeWorkout is not null) // Om vald workout inte är null
+            {
+                // Skriv ut pass information
+                Workout? workoutInfo = wo.GetWorkoutInfo((int)activeWorkout);
+                if (workoutInfo is not null)
+                {
+                    Console.WriteLine($"Datum: {workoutInfo.DateTime}");
+                    Console.WriteLine($"Tidsåtgång: {workoutInfo.Duration}");
+                    Console.WriteLine($"Intensitet: {workoutInfo.Intensity}");
 
-            // Skriv ut övningar
-
+                    // Skriv ut övningar
+                    Console.WriteLine($"\nÖvningar:");
+                    List<Exercise> woExercises = wo.GetExercisesForWorkout((int)activeWorkout);
+                    if (woExercises.Count > 0)
+                    {
+                        foreach (Exercise exercise in woExercises)
+                        {
+                            Console.WriteLine($"\t[{exercise.Id} {exercise.Name}, {exercise.Weight} kg x {exercise.Reps}]");
+                        }
+                    }
+                    else // Inga övningar finns att hämta ut.
+                    {
+                        Console.WriteLine("Inga övningar registrerade.");
+                    }
+                }
+                else // Pass hittas inte i db.
+                {
+                    Console.WriteLine("Inga uppgifter hittades för det angivna träningspasset.");
+                }
+            }
             Console.WriteLine($"\n---------------------------------\n");
 
             Console.WriteLine("1. Registrera övning ");
@@ -422,19 +449,19 @@ namespace ptApp
             switch (input)
             {
                 case '1':
-                break;
+                    break;
                 case '2':
-                break;
+                    break;
                 case '3':
-                break;
+                    break;
                 case '4':
-                break;
-                
+                    break;
+
                 case 88: // Avbryt, backar till inloggad användares meny genom att sätta activeWorkout till null och ladda om.
-                activeWorkout = null;
-                Console.Clear();
-                break;
-            } 
+                    activeWorkout = null;
+                    Console.Clear();
+                    break;
+            }
         }
     }
 }
