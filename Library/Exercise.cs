@@ -10,5 +10,19 @@ namespace ptApp
         public string? Description { get; set; }
         public int? Reps { get; set; }
         public int? Weight { get; set; }
+  
+        public Exercise()
+        {
+
+        }
+
+        public Exercise(string name, int reps, int weight)
+        {
+            Name = name;
+            Description = "";
+            Reps = reps;
+            Weight = weight;
+        }
     }
+
 }
