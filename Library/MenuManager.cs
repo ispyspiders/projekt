@@ -68,6 +68,7 @@ namespace ptApp
                     username = Console.ReadLine();
                     if (String.IsNullOrWhiteSpace(username)) // Är användarnamn null eller blanksteg skriv ut felmeddelande
                     {
+                        Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
                         Console.WriteLine("\nAnvändarnamn måste anges.");
                         Console.ResetColor(); // Återställ textfärg
                         Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
@@ -88,6 +89,7 @@ namespace ptApp
                         password = Console.ReadLine();
                         if (String.IsNullOrWhiteSpace(password)) // Är lösenord null eller blanksteg skriv ut felmeddelande
                         {
+                            Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
                             Console.WriteLine("\nLösenord måste anges.");
                             Console.ResetColor(); // Återställ textfärg
                             Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
@@ -99,6 +101,14 @@ namespace ptApp
                             {
                                 loggedinUser = username; // spara username i variabel för inloggad användare
                                 loggedinUserId = user.GetUserId(username); // spara id i variabel för inloggad användare
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
+                                Console.WriteLine("\nInloggning misslyckades! Fel avändarnamn/lösenord.");
+                                Console.ResetColor(); // Återställ textfärg
+                                Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                                Console.ReadKey();
                             }
                         }
                     }
@@ -221,12 +231,14 @@ namespace ptApp
             Console.WriteLine($"---------------------------------\n");
 
             // ANVÄNDARES PASS
-            Console.WriteLine("Mina pass");
+            Console.WriteLine("Mina pass: \n");
             // skriv ut pass till konsol
             foreach (Workout workout in activeUsersWorkouts)
             {
                 Console.WriteLine($"[{workout.Id}] {workout.DateTime:dd-MM-yyyy}, {workout.Duration} min, {workout.Intensity} intensitet");
             }
+
+            Console.WriteLine($"\n---------------------------------\n");
 
             int input = (int)Console.ReadKey(true).Key;
             switch (input)
@@ -388,7 +400,51 @@ namespace ptApp
                         }
                     }
                     break;
-                case '2':
+                case '2': // Uppdatera pass
+                    Console.Clear(); // Rensa skärm
+                    Console.CursorVisible = false; // släck cursor
+                    Console.WriteLine("U P P D A T E R A   P A S S\n\n");
+
+
+                    Console.WriteLine($"---------------------------------\n");
+
+                    Console.WriteLine("Mina pass: \n");
+                    // skriv ut pass till konsol
+                    foreach (Workout workout in activeUsersWorkouts)
+                    {
+                        Console.WriteLine($"[{workout.Id}] {workout.DateTime:dd-MM-yyyy}, {workout.Duration} min, {workout.Intensity} intensitet");
+                    }
+
+                    Console.WriteLine($"\n---------------------------------\n");
+
+                    Console.Write("Ange id för det pass du vill uppdatera: ");
+                    Console.CursorVisible = true; // Tänd cursor
+                    string? idInput = Console.ReadLine(); // läsin input
+                    if (String.IsNullOrWhiteSpace(idInput)) // om null eller blanksteg
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
+                        Console.WriteLine($"\nId för träningspass måste anges.");
+                        Console.ResetColor(); // Återställ textfärg
+                        Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                        Console.CursorVisible = false; // släck cursor
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        if (!int.TryParse(idInput, out int updateId)) // in inte går att omvandla till int
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
+                            Console.WriteLine($"\nId för träningspass ej numeriskt.");
+                            Console.ResetColor(); // Återställ textfärg
+                            Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                            Console.CursorVisible = false; // släck cursor
+                            Console.ReadKey();
+                        }
+                        else
+                        {
+                            activeWorkout = updateId; // sätt aktivt träningspass till angivet id
+                        }
+                    }
                     break;
                 case '3':
                     break;
@@ -411,7 +467,7 @@ namespace ptApp
                 Workout? workoutInfo = wo.GetWorkoutInfo((int)activeWorkout);
                 if (workoutInfo is not null)
                 {
-                    Console.WriteLine($"Datum: {workoutInfo.DateTime}");
+                    Console.WriteLine($"Datum: {workoutInfo.DateTime:dd-MM-yyyy}");
                     Console.WriteLine($"Tidsåtgång: {workoutInfo.Duration}");
                     Console.WriteLine($"Intensitet: {workoutInfo.Intensity}");
 
