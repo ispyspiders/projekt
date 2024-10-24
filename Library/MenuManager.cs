@@ -442,11 +442,69 @@ namespace ptApp
                         }
                         else
                         {
-                            activeWorkout = updateId; // sätt aktivt träningspass till angivet id
+                            if (wo.GetWorkoutInfo(updateId) is not null) // Om det går hämta workout med valt id från db
+                            {
+                                activeWorkout = updateId; // sätt aktivt träningspass till angivet id, tränigspass meny laddas.
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
+                                Console.WriteLine($"\nInget träningspass med id {updateId} hittades.");
+                                Console.ResetColor(); // Återställ textfärg
+                                Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                                Console.CursorVisible = false; // släck cursor
+                                Console.ReadKey();
+                            }
                         }
                     }
                     break;
-                case '3':
+                case '3': // Radera pass
+                    Console.Clear(); // Rensa skärm
+                    Console.CursorVisible = false; // släck cursor
+                    Console.WriteLine("R A D E R A   P A S S\n\n");
+
+
+                    Console.WriteLine($"---------------------------------\n");
+
+                    Console.WriteLine("Mina pass: \n");
+                    // skriv ut pass till konsol
+                    foreach (Workout workout in activeUsersWorkouts)
+                    {
+                        Console.WriteLine($"[{workout.Id}] {workout.DateTime:dd-MM-yyyy}, {workout.Duration} min, {workout.Intensity} intensitet");
+                    }
+
+                    Console.WriteLine($"\n---------------------------------\n");
+
+                    Console.Write("Ange id för det pass du vill radera: ");
+                    Console.CursorVisible = true; // Tänd cursor
+                    string? deleteInput = Console.ReadLine();
+                    if (String.IsNullOrWhiteSpace(deleteInput)) // om null eller blanksteg
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
+                        Console.WriteLine($"\nId för träningspass måste anges.");
+                        Console.ResetColor(); // Återställ textfärg
+                        Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                        Console.CursorVisible = false; // släck cursor
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        if (!int.TryParse(deleteInput, out int deleteId)) // in inte går att omvandla till int
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
+                            Console.WriteLine($"\nId för träningspass ej numeriskt.");
+                            Console.ResetColor(); // Återställ textfärg
+                            Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+                            Console.CursorVisible = false; // släck cursor
+                            Console.ReadKey();
+                        }
+                        else
+                        {
+                            // Finns id i db
+                            // Är du säker
+                            // RAdera
+                        }
+                    }
                     break;
                 case 88: // x för logga ut
                     loggedinUser = null;
