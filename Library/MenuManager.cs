@@ -460,23 +460,13 @@ namespace ptApp
                     string? indexInput = Console.ReadLine(); // läsin input
                     if (String.IsNullOrWhiteSpace(indexInput)) // om null eller blanksteg
                     {
-                        Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
-                        Console.WriteLine($"\nId för träningspass måste anges.");
-                        Console.ResetColor(); // Återställ textfärg
-                        Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
-                        Console.CursorVisible = false; // släck cursor
-                        Console.ReadKey();
+                        DrawErrorMessage("\nIndex för träningspass måste anges.");
                     }
                     else
                     {
                         if (!int.TryParse(indexInput, out int updateIndex)) // in inte går att omvandla till int
                         {
-                            Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
-                            Console.WriteLine($"\nId för träningspass ej numeriskt.");
-                            Console.ResetColor(); // Återställ textfärg
-                            Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
-                            Console.CursorVisible = false; // släck cursor
-                            Console.ReadKey();
+                            DrawErrorMessage("\nIndex för träningspass ej numeriskt.");
                         }
                         else
                         {
@@ -640,7 +630,7 @@ namespace ptApp
                         for (int i = 0; i < woExercises.Count; i++)
                         {
                             var exercise = woExercises[i];
-                            Console.WriteLine($"  [{i}] {exercise.Name}, {exercise.Weight} kg x {exercise.Reps}");
+                            Console.WriteLine($"  [{i}] {exercise.Name}, {exercise.Weight} kg x {exercise.Reps} reps");
                         }
                     }
                     else // Inga övningar finns att hämta ut.
@@ -788,8 +778,166 @@ namespace ptApp
 
                     break;
                 case '2': // Uppdatera övning
+                    Console.Clear(); // Rensa skärm
+                    Console.CursorVisible = false; // släck cursor
+                    Console.WriteLine("U P P D A T E R A   Ö V N I N G\n\n");
+
+                    // // Skriv ut övningar
+                    if (activeWorkout is not null)
+                    {
+                        List<Exercise> woExercises = wo.GetExercisesForWorkout((int)activeWorkout);
+                        if (woExercises.Count > 0) // Om övningar finns, skriv ut dessa och fråga efter index att uppdatera
+                        {
+                            Console.WriteLine($"Övningar:");
+                            for (int i = 0; i < woExercises.Count; i++)
+                            {
+                                var exercise = woExercises[i];
+                                Console.WriteLine($"  [{i}] {exercise.Name}, {exercise.Weight} kg x {exercise.Reps} reps");
+                            }
+                            Console.WriteLine($"\n---------------------------------\n");
+
+                            // Ange index för övning att uppdatera
+                            Console.Write("Ange index för den övning du vill uppdatera: ");
+                            Console.CursorVisible = true; // Tänd cursor
+                            string? indexInput = Console.ReadLine(); // läsin input
+                            if (String.IsNullOrWhiteSpace(indexInput)) // om null eller blanksteg
+                            {
+                                DrawErrorMessage("\nId för övning måste anges.");
+                            }
+                            else
+                            {
+                                if (!int.TryParse(indexInput, out int updateIndex)) // index inte går att omvandla till int
+                                {
+                                    DrawErrorMessage("\nIndex för övning ej numeriskt.");
+                                }
+                                else
+                                {
+                                    if (updateIndex >= 0 && updateIndex < woExercises.Count) // Om update index finns i listan
+                                    {
+                                        int updateId = woExercises[updateIndex].Id; // Läs in id för valt index
+
+                                        // VIKT
+                                        do
+                                        {
+                                            Console.Clear(); // Rensa skärm
+                                            Console.CursorVisible = false; // släck cursor
+                                            Console.WriteLine("U P P D A T E R A   Ö V N I N G\n\n");
+
+                                            Console.WriteLine($"Namn på övning: {woExercises[updateIndex].Name}\n");
+
+                                            Console.Write("Vikt (kg): ");
+                                            Console.CursorVisible = true; // Tänd cursor
+                                            weightInput = Console.ReadLine(); // läs in input
+
+                                            if (String.IsNullOrWhiteSpace(weightInput)) // Har input inte ett innehåll, skriv ut felmeddelande
+                                            {
+                                                DrawErrorMessage("\nVikt måste anges. Vänligen ange vikt i hela kg. Används ingen vikt ange 0.");
+                                            }
+                                            else
+                                            {
+                                                if (!int.TryParse(weightInput, out int weight)) // kontroll att vikt är numeriskt
+                                                {
+                                                    weightInput = null;
+                                                    DrawErrorMessage("\nVikt måste vara numersikt. Vänligen ange vikt i hela kg.");
+                                                }
+                                                if (weight < 0)
+                                                {
+                                                    weightInput = null;
+                                                    DrawErrorMessage("\nVikt kan ej vara negativt.");
+                                                }
+                                            }
+                                        }
+                                        while (String.IsNullOrWhiteSpace(weightInput));
+
+                                        // REPS
+                                        do
+                                        {
+                                            Console.Clear(); // Rensa skärm
+                                            Console.CursorVisible = false; // släck cursor
+                                            Console.WriteLine("U P P D A T E R A   Ö V N I N G\n\n");
+                                            Console.WriteLine($"Namn på övning: {woExercises[updateIndex].Name}");
+                                            Console.WriteLine($"Vikt: {weightInput} kg\n");
+
+                                            Console.Write("Antal reps: ");
+                                            Console.CursorVisible = true; // Tänd cursor
+                                            repsInput = Console.ReadLine(); // läs in input
+
+                                            if (String.IsNullOrWhiteSpace(repsInput)) // Har input inte ett innehåll, skriv ut felmeddelande
+                                            {
+                                                DrawErrorMessage("\nAntal repetitioner måste anges.");
+                                            }
+                                            else
+                                            {
+                                                if (!int.TryParse(repsInput, out int reps)) // kontroll att vikt är numeriskt
+                                                {
+                                                    repsInput = null;
+                                                    DrawErrorMessage("\nReps måste vara numersikt. Vänligen ange antal repetitioner som ett heltal.");
+                                                }
+                                                if (reps < 0)
+                                                {
+                                                    repsInput = null;
+                                                    DrawErrorMessage("\nAntal repetitioner kan ej vara negativt.");
+                                                }
+                                            }
+                                        }
+                                        while (String.IsNullOrWhiteSpace(repsInput));
+
+                                        // Skapa ett exercise-objekt med ny info
+                                        Exercise updateEx = new Exercise
+                                        {
+                                            Id = updateId,
+                                            Name = woExercises[updateIndex].Name,
+                                            Description = "",
+                                            Reps = int.Parse(repsInput),
+                                            Weight = int.Parse(weightInput)
+                                        };
+                                        if(updateEx.UpdateExercise(updateEx)) DrawSuccessMessage("\nÖvning uppdaterad!");
+                                        else DrawErrorMessage("\nFel vid uppdatering av övning.");
+                                    }
+                                    else
+                                    {
+                                        DrawErrorMessage($"Ingen övning med index {updateIndex} hittades.");
+                                    }
+                                }
+                            }
+                        }
+                        else // Inga övningar finns att hämta ut.
+                        {
+                            DrawErrorMessage("\nDet finns inga övningar att uppdatera.");
+                        }
+                    }
                     break;
                 case '3': // Radera övning
+                    Console.Clear(); // Rensa skärm
+                    Console.CursorVisible = false; // släck cursor
+                    Console.WriteLine("R A D E R A   Ö V N I N G\n\n");
+
+                    // // Skriv ut övningar
+                    if (activeWorkout is not null)
+                    {
+                        List<Exercise> woExercises = wo.GetExercisesForWorkout((int)activeWorkout);
+                        if (woExercises.Count > 0)
+                        {
+                            Console.WriteLine($"Övningar:");
+                            for (int i = 0; i < woExercises.Count; i++)
+                            {
+                                var exercise = woExercises[i];
+                                Console.WriteLine($"  [{i}] {exercise.Name}, {exercise.Weight} kg x {exercise.Reps} reps");
+                            }
+                            Console.WriteLine($"\n---------------------------------\n");
+
+                            Console.Write("Ange index för den övning du vill radera: ");
+                            Console.CursorVisible = true; // Tänd cursor
+                            string? indexInput = Console.ReadLine(); // läsin input
+
+
+
+                        }
+                        else // Inga övningar finns att hämta ut.
+                        {
+                            DrawErrorMessage("\nDet finns inga övningar att radera.");
+                        }
+                    }
                     break;
                 case '4': // Redigera pass-information
                     break;
