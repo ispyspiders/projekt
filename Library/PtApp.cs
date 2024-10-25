@@ -1,4 +1,4 @@
-// Klass för träningsapp. Agerar på User, Exercise och Workout
+// Klass för träningsapp. Sköter db-anslutning
 // Skapad av Kajsa Classon, HT24.
 
 using System.Xml.XPath;
