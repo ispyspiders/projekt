@@ -135,7 +135,25 @@ namespace ptApp
                 return false;
             }
         }
+
+        public bool DeleteExercise(int exerciseId)
+        {
+            try
+            {
+                using var connection = new SqliteConnection(ptApp.connectionString);
+                connection.Open(); // öppna db-anslutning
+                string query = @"DELETE FROM exercises WHERE exerciseId=@ExerciseId;";
+
+                using var command = new SqliteCommand(query, connection);
+                command.Parameters.AddWithValue("@ExerciseId", exerciseId);
+                int result = command.ExecuteNonQuery();
+                return result > 0; // Om resultatet är mer än 0 returneras true
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ett fel inträffade vid radering av exercise: {ex.Message}");
+                return false;
+            }
+        }
     }
-
-
 }
