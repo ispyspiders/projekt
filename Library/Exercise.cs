@@ -28,6 +28,37 @@ namespace ptApp
             Weight = weight;
         }
 
+        public Exercise? getExerciseInfo(int exerciseId)
+        {
+            string query = @"SELECT * FROM exercises WHERE exerciseId= @ExerciseId;";
+            try
+            {
+                using var connection = new SqliteConnection(ptApp.connectionString);
+                connection.Open();
+                using var command = new SqliteCommand(query, connection);
+                command.Parameters.AddWithValue("@ExerciseId", exerciseId);
+                using var reader = command.ExecuteReader(); // läs in svar från db
+                if (reader.Read())
+                {
+                    Exercise exercise = new Exercise
+                    {
+                        Id = reader.GetInt32(reader.GetOrdinal("exerciseId")),
+                        Name = reader.GetString(reader.GetOrdinal("exerciseName")),
+                        Description = reader.GetString(reader.GetOrdinal("description")),
+                        Reps = reader.GetInt32(reader.GetOrdinal("reps")),
+                        Weight = reader.GetInt32(reader.GetOrdinal("weight"))
+                    };
+                    return exercise;
+                }
+                else return null;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ett fel inträffade vid inläsning av övning: {ex.Message}");
+                return null;
+            }
+        }
+
         public int RegisterExercise(int workoutId)
         {
             using (var connection = new SqliteConnection(ptApp.connectionString))
@@ -64,12 +95,47 @@ namespace ptApp
                         }
                         return exerciseId; // returnera id för tillagt övning
                     }
-                    else{
+                    else
+                    {
                         throw new Exception("Fel vid registrering av övning.");
                     }
                 }
             }
         }
+
+        public bool UpdateExercise(Exercise exercise)
+        {
+            try
+            {
+                using var connection = new SqliteConnection(ptApp.connectionString);
+                connection.Open(); // öppna db-anslutning
+                string query = @"UPDATE exercises
+                SET exerciseName = @ExerciseName,
+                    description = @Description,
+                    reps = @Reps,
+                    weight = @Weight
+                WHERE exerciseId = @ExerciseId;
+                ";
+
+                using (var command = new SqliteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ExerciseName", exercise.Name);
+                    command.Parameters.AddWithValue("@Description", exercise.Description);
+                    command.Parameters.AddWithValue("@Reps", exercise.Reps);
+                    command.Parameters.AddWithValue("@Weight", exercise.Weight);
+                    command.Parameters.AddWithValue("@ExerciseId", exercise.Id);
+
+                    int result = command.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ett fel inträffade vid uppdatering av exercise: {ex.Message}");
+                return false;
+            }
+        }
     }
+
 
 }
