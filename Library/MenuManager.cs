@@ -36,6 +36,16 @@ namespace ptApp
             Console.ReadKey();
         }
 
+        private void DrawSuccessMessage(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Green; // Sätt textfärg till grön.
+            Console.WriteLine(message);
+            Console.ResetColor(); // Återställ textfärg
+            Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
+            Console.CursorVisible = false; // släck cursor
+            Console.ReadKey();
+        }
+
         public void DrawMenu()
         {
             MenuState menuState = MenuState.main;
@@ -630,12 +640,12 @@ namespace ptApp
                         for (int i = 0; i < woExercises.Count; i++)
                         {
                             var exercise = woExercises[i];
-                            Console.WriteLine($"\t[{i} {exercise.Name}, {exercise.Weight} kg x {exercise.Reps}]");
+                            Console.WriteLine($"  [{i}] {exercise.Name}, {exercise.Weight} kg x {exercise.Reps}");
                         }
                     }
                     else // Inga övningar finns att hämta ut.
                     {
-                        Console.WriteLine("Inga övningar registrerade.");
+                        Console.WriteLine("  Inga övningar registrerade.");
                     }
                 }
                 else // Pass hittas inte i db.
@@ -746,9 +756,35 @@ namespace ptApp
                     }
                     while (String.IsNullOrWhiteSpace(repsInput));
 
-                    // KONTROLLERA ATT ANVÄNDARE + PASS
-                    // SKAPA NY Exercise-object
-                    // SKICKA FÖRFRÅGAN TILL DB
+                    // KONTROLLERA ATT INLOGGAD ANVÄNDARE + PASSANVÄNDARE ÄR SAMMA
+                    if (activeWorkout is not null && loggedinUserId is not null) // Om vald workout inte är null och inloggad användare inte är null
+                    {
+                        // Hämta info om pass
+                        Workout? workoutInfo = wo.GetWorkoutInfo((int)activeWorkout);
+                        if (workoutInfo is not null)
+                        {
+                            if (workoutInfo.UserId == loggedinUserId) // Om användar id för aktiv workout är samma som inloggad användares id
+                            {
+                                // Skapa nytt Exercise-object
+                                Exercise exerciseToReg = new Exercise(nameInput, int.Parse(repsInput), int.Parse(weightInput));
+                                // SKICKA FÖRFRÅGAN TILL DB
+                                int? regResult = exerciseToReg.RegisterExercise((int)activeWorkout);
+                                if (regResult > 0)
+                                {
+                                    DrawSuccessMessage("\nÖvning registrerad!");
+                                }
+                                else
+                                {
+                                    DrawErrorMessage("\nFel vid registrering av övning!");
+                                }
+                            }
+                            else
+                            { // Användar id stämmer inte mellan inloggad användare och passets ägare
+                                DrawErrorMessage("\nObehörig användare! Fel vid registrering av övning.");
+                            }
+
+                        }
+                    }
 
                     break;
                 case '2': // Uppdatera övning
