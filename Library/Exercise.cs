@@ -28,7 +28,7 @@ namespace ptApp
             Weight = weight;
         }
 
-        public Exercise? getExerciseInfo(int exerciseId)
+        public Exercise? GetExerciseInfo(int exerciseId)
         {
             string query = @"SELECT * FROM exercises WHERE exerciseId= @ExerciseId;";
             try
