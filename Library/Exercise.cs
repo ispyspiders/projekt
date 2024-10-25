@@ -28,7 +28,7 @@ namespace ptApp
             Weight = weight;
         }
 
-        public int RegisterExercise()
+        public int RegisterExercise(int workoutId)
         {
             using (var connection = new SqliteConnection(ptApp.connectionString))
             {
@@ -49,16 +49,26 @@ namespace ptApp
                     if (result > 0)
                     {
                         command.CommandText = "SELECT last_insert_rowid();";
-                        return Convert.ToInt32(command.ExecuteScalar());
+                        int exerciseId = Convert.ToInt32(command.ExecuteScalar());
+
+                        // Registrera relation i workout_exercises
+                        string relationQuery = @"INSERT INTO workout_exercises (workoutId, exerciseId)
+                        VALUES (@WorkoutId, @ExerciseId);";
+
+                        using (var relationCommand = new SqliteCommand(relationQuery, connection))
+                        {
+                            relationCommand.Parameters.Add(new SqliteParameter("@WorkoutId", workoutId));
+                            relationCommand.Parameters.Add(new SqliteParameter("@ExerciseId", exerciseId));
+
+                            relationCommand.ExecuteNonQuery(); // lägg till relation
+                        }
+                        return exerciseId; // returnera id för tillagt övning
                     }
                     else{
                         throw new Exception("Fel vid registrering av övning.");
                     }
                 }
-
             }
-
-
         }
     }
 
