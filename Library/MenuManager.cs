@@ -522,29 +522,19 @@ namespace ptApp
                     string? deleteInput = Console.ReadLine();
                     if (String.IsNullOrWhiteSpace(deleteInput)) // om null eller blanksteg
                     {
-                        Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
-                        Console.WriteLine($"\nIndex för träningspass måste anges.");
-                        Console.ResetColor(); // Återställ textfärg
-                        Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
-                        Console.CursorVisible = false; // släck cursor
-                        Console.ReadKey();
+                        DrawErrorMessage("\nIndex för träningspass måste anges.");
                     }
                     else
                     {
                         if (!int.TryParse(deleteInput, out int deleteIndex)) // in inte går att omvandla till int
                         {
-                            Console.ForegroundColor = ConsoleColor.Red; // Sätt textfärg till röd.
-                            Console.WriteLine($"\nIndex för träningspass ej numeriskt.");
-                            Console.ResetColor(); // Återställ textfärg
-                            Console.WriteLine("\nTryck på valfri tangent för att fortsätta.");
-                            Console.CursorVisible = false; // släck cursor
-                            Console.ReadKey();
+                            DrawErrorMessage("\nIndex för träningspass ej numeriskt.");
                         }
                         else
                         {
                             if (deleteIndex >= 0 && deleteIndex < activeUsersWorkouts.Count) // Om deleteindex finns i listan
                             {
-                                int deleteId = activeUsersWorkouts[deleteIndex].Id;
+                                int deleteId = activeUsersWorkouts[deleteIndex].Id; // läs in id för det index som ska raderas
                                 Workout? woToDel = wo.GetWorkoutInfo(deleteId);
                                 if (woToDel is not null) // Finns id i db
                                 {
@@ -802,7 +792,7 @@ namespace ptApp
                             string? indexInput = Console.ReadLine(); // läsin input
                             if (String.IsNullOrWhiteSpace(indexInput)) // om null eller blanksteg
                             {
-                                DrawErrorMessage("\nId för övning måste anges.");
+                                DrawErrorMessage("\nIndex för övning måste anges.");
                             }
                             else
                             {
@@ -891,7 +881,7 @@ namespace ptApp
                                             Reps = int.Parse(repsInput),
                                             Weight = int.Parse(weightInput)
                                         };
-                                        if(updateEx.UpdateExercise(updateEx)) DrawSuccessMessage("\nÖvning uppdaterad!");
+                                        if (updateEx.UpdateExercise(updateEx)) DrawSuccessMessage("\nÖvning uppdaterad!");
                                         else DrawErrorMessage("\nFel vid uppdatering av övning.");
                                     }
                                     else
@@ -929,9 +919,59 @@ namespace ptApp
                             Console.Write("Ange index för den övning du vill radera: ");
                             Console.CursorVisible = true; // Tänd cursor
                             string? indexInput = Console.ReadLine(); // läsin input
+                            if (String.IsNullOrWhiteSpace(indexInput))
+                            {
+                                DrawErrorMessage("\nIndex för övning måste anges.");
+                            }
+                            else
+                            {
+                                if (!int.TryParse(indexInput, out int deleteIndex)) // index inte går att omvandla till int
+                                {
+                                    DrawErrorMessage("\nIndex för övning ej numeriskt.");
+                                }
+                                else
+                                {
+                                    if (deleteIndex >= 0 && deleteIndex < woExercises.Count) // Om deleteindex finns i listan
+                                    {
+                                        int deleteId = woExercises[deleteIndex].Id; // läs in id för det index som ska raderas
+                                        Exercise ex = new Exercise();
+                                        Exercise? exToDel = ex.GetExerciseInfo(deleteId);
+                                        if (exToDel is not null) // finns id i db
+                                        {
+                                            // Är du säker
+                                            Console.Clear(); // Rensa skärm
+                                            Console.CursorVisible = false; // släck cursor
+                                            Console.WriteLine($"R A D E R A   Ö V N I N G   [{deleteIndex}]\n\n");
 
+                                            Console.WriteLine($"Är du säker på att du vill radera övning [{deleteIndex}] {exToDel.Name}?\n");
+                                            Console.WriteLine("1. Radera");
+                                            Console.WriteLine("\nX. Avbryt");
 
-
+                                            input = (int)Console.ReadKey(true).Key;
+                                            switch (input)
+                                            {
+                                                case '1': // Radera
+                                                    if (exToDel.DeleteExercise(deleteId)) // Om lyckad radereing
+                                                    {
+                                                        DrawSuccessMessage("\nÖvning raderad!");
+                                                    }
+                                                    else // Vid misslyckad radering 
+                                                    {
+                                                        DrawErrorMessage($"\nRadering av övning misslyckades!.");
+                                                    }
+                                                    break;
+                                                case 88: // x för avbryt
+                                                    break;
+                                            }
+                                        }
+                                        else DrawErrorMessage("\nRadering av övning misslyckades! Ingen övning med detta id hittades i databasen.");// Övning med id finns ej i db
+                                    }
+                                    else
+                                    {
+                                        DrawErrorMessage($"\nIngen övning med index [{deleteIndex}] hittades.");
+                                    }
+                                }
+                            }
                         }
                         else // Inga övningar finns att hämta ut.
                         {
