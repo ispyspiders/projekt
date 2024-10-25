@@ -85,8 +85,8 @@ namespace ptApp
                     workout_exerciseId INTEGER PRIMARY KEY AUTOINCREMENT,
                     workoutId INTEGER,
                     exerciseId INTEGER,
-                    FOREIGN KEY (workoutId) REFERENCES workouts(workoutId),
-                    FOREIGN KEY (exerciseId) REFERENCES exercises(ExerciseId)
+                    FOREIGN KEY (workoutId) REFERENCES workouts(workoutId) ON UPDATE CASCADE ON DELETE CASCADE,
+                    FOREIGN KEY (exerciseId) REFERENCES exercises(ExerciseId) ON UPDATE CASCADE ON DELETE CASCADE
                     );
                     ";
 
