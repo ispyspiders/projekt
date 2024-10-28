@@ -3,6 +3,7 @@
 
 using System.Data;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using Microsoft.Data.Sqlite;
 
 namespace ptApp
@@ -60,6 +61,37 @@ namespace ptApp
                         throw new Exception("Inget träningspass registrerades.");
                     }
                 }
+            }
+        }
+
+        public bool UpdateWorkout(Workout workout)
+        {
+            try
+            {
+                using var connection = new SqliteConnection(ptApp.connectionString);
+                connection.Open(); // öppna db-anslutning
+                string query = @"UPDATE workouts
+                SET date = @Date,
+                    duration = @Duration,
+                    intensity = @Intensity
+                WHERE workoutId = @WorkoutId;
+                ";
+
+                using (var command = new SqliteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Date", workout.DateTime.ToString("dd-MM-yyyy"));
+                    command.Parameters.AddWithValue("@Duration", workout.Duration);
+                    command.Parameters.AddWithValue("@Intensity", workout.Intensity);
+                    command.Parameters.AddWithValue("@WorkoutId", workout.Id);
+
+                    int result = command.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"\nEtt fel inträffade vid uppdatering av workout: {ex.Message}");
+                return false;
             }
         }
 
