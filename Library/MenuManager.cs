@@ -3,7 +3,9 @@
 
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Runtime.CompilerServices;
+using SQLitePCL;
 
 namespace ptApp
 {
@@ -907,6 +909,10 @@ namespace ptApp
                             // DATUM
                             do
                             {
+                                Console.Clear(); // Rensa skärm
+                                Console.CursorVisible = false; // släck cursor
+                                Console.WriteLine("R E D I G E R A   P A S S I N F O R M A T I O N\n\n");
+
                                 Console.WriteLine($"Datum för pass: {woToUpdate.DateTime:dd-MM-yyyy}");
                                 Console.WriteLine($"Tidsåtgång: {woToUpdate.Duration} min");
                                 Console.WriteLine($"Intensitet: {woToUpdate.Intensity}");
@@ -926,8 +932,12 @@ namespace ptApp
                                 {
                                     if (!Workout.CheckIfValidDate(dateInput))
                                     {
-                                        DrawErrorMessage("\nOgiltigt datumformat.");
+                                        DrawErrorMessage("\nOgiltigt datum.");
                                         dateInput = null;
+                                    }
+                                    else
+                                    {
+                                        woToUpdate.DateTime = DateTime.ParseExact(dateInput, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None);
                                     }
                                 }
                             }
@@ -940,7 +950,7 @@ namespace ptApp
                                 Console.CursorVisible = false; // släck cursor
                                 Console.WriteLine("R E D I G E R A   P A S S I N F O R M A T I O N\n\n");
 
-                                Console.WriteLine($"Nytt datum för pass: {dateInput}\n");
+                                Console.WriteLine($"Nytt datum för pass: {woToUpdate.DateTime:dd-MM-yyyy}\n");
                                 Console.WriteLine($"Tidsåtgång: {woToUpdate.Duration} min");
                                 Console.WriteLine($"Intensitet: {woToUpdate.Intensity}");
 
@@ -958,6 +968,10 @@ namespace ptApp
                                 }
                                 else
                                 {
+                                    if (int.TryParse(durationInput, out int d) && d >= 0)
+                                    {
+                                        woToUpdate.Duration = d;
+                                    }
                                     if (!int.TryParse(durationInput, out int duration)) // kontroll att tidsåtgång är numeriskt
                                     {
                                         durationInput = null; // sätt input till null så att vi fortsättrer loopen
@@ -979,8 +993,8 @@ namespace ptApp
                                 Console.CursorVisible = false; // släck cursor
                                 Console.WriteLine("R E D I G E R A   P A S S I N F O R M A T I O N\n\n");
 
-                                Console.WriteLine($"Nytt datum för pass: {dateInput}");
-                                Console.WriteLine($"Ny tidsåtgång: {durationInput} min\n");
+                                Console.WriteLine($"Nytt datum för pass: {woToUpdate.DateTime:dd-MM-yyyy}");
+                                Console.WriteLine($"Ny tidsåtgång: {woToUpdate.Duration} min\n");
                                 Console.WriteLine($"Intensitet: {woToUpdate.Intensity}");
 
                                 Console.WriteLine($"\n---------------------------------\n");
@@ -1001,15 +1015,17 @@ namespace ptApp
                                         intensityInput = null; // sätt input till null för att fortsätta loop
                                         DrawErrorMessage($"\nOgiltigt värde! Vänligen ange Låg, Medel eller Hög.");
                                     }
+                                    else
+                                    {
+                                        woToUpdate.Intensity = Enum.Parse<Intensity>(intensityInput, true);
+                                    }
                                 }
                             }
                             while (String.IsNullOrWhiteSpace(intensityInput));
 
                             // SKICKA UPPDATERING TILL DB
-
-
-
-
+                            if (woToUpdate.UpdateWorkout(woToUpdate)) DrawSuccessMessage("\nPassinformation uppdaterad!");
+                            else DrawErrorMessage("\nFel vid uppdatering av passinformation");
                         }
                     }
                     break;
