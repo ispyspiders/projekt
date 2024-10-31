@@ -9,13 +9,6 @@ using SQLitePCL;
 
 namespace ptApp
 {
-
-    public enum MenuState
-    {
-        main,
-        loggedIn,
-        workout
-    }
     public class MenuManager
     {
         // PtApp ptApp = new PtApp();
@@ -208,9 +201,9 @@ namespace ptApp
                 Console.WriteLine($"{activeUsersWorkouts.Count}"); // skriv ut antal
             else
                 Console.WriteLine($"0"); // Annars skriv ut 0
-            if (user.getUsersTotalWorkoutTime(userId) is not null) // Om träningstid inte är null skriv ut den
+            if (user.GetUsersTotalWorkoutTime(userId) is not null) // Om träningstid inte är null skriv ut den
             {
-                Console.WriteLine($"Total träningstid: {user.getUsersTotalWorkoutTime(userId)} min");
+                Console.WriteLine($"Total träningstid: {user.GetUsersTotalWorkoutTime(userId)} min");
             }
 
             Console.WriteLine($"---------------------------------\n");

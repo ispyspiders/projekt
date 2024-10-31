@@ -84,7 +84,7 @@ namespace ptApp
             }
         }
 
-        public int? getUsersTotalWorkoutTime(int userId)
+        public int? GetUsersTotalWorkoutTime(int userId)
         {
             int totalDuration = 0;
             string query = $@"SELECT SUM(duration) FROM workouts WHERE userId=@id";
