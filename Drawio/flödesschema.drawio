@@ -1,11 +1,11 @@
 <mxfile host="65bd71144e">
     <diagram id="w7LqoXCT8CnwwwJLQl_I" name="Page-1">
-        <mxGraphModel dx="3562" dy="2259" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="3027" dy="1330" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="2" value="&lt;h1&gt;PT-applikation&lt;/h1&gt;&lt;p&gt;En konsolapplikation som fungerar som en personlig träningsdagbok.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="22.5" y="-160" width="190" height="120" as="geometry"/>
+                    <mxGeometry x="5" y="-290" width="190" height="120" as="geometry"/>
                 </mxCell>
                 <mxCell id="8" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="5" target="6" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -14,31 +14,31 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="5" value="Huvudmeny" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="372.5" y="-270" width="120" height="80" as="geometry"/>
+                    <mxGeometry x="371.25" y="-290" width="120" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="11" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="6" target="10" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="6" value="1. Logga in" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="147.5" y="-40" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="147.5" y="-130" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="141" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="7" target="136" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="2. Skapa ny användare" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="982.5" y="-40" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="773.75" y="-130" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="13" value="" style="edgeStyle=none;html=1;" parent="1" source="10" target="12" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="10" value="Output:&lt;br&gt;Ange användarnamn:" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="122.5" y="40" width="170" height="60" as="geometry"/>
+                    <mxGeometry x="122.5" y="-50" width="170" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="15" value="" style="edgeStyle=none;html=1;" parent="1" source="12" target="14" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="12" value="Input:&lt;br&gt;användarnamn" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="122.5" y="120" width="170" height="60" as="geometry"/>
+                    <mxGeometry x="122.5" y="30" width="170" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="19" value="NEJ" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="14" target="16" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -47,13 +47,13 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="14" value="Finns användarnamnet i db?" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="147.5" y="210" width="120" height="160" as="geometry"/>
+                    <mxGeometry x="147.5" y="120" width="120" height="160" as="geometry"/>
                 </mxCell>
                 <mxCell id="18" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="16" target="5" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="620" y="290"/>
-                            <mxPoint x="620" y="-230"/>
+                            <mxPoint x="640" y="200"/>
+                            <mxPoint x="640" y="-250"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -61,19 +61,19 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="17" value="Output:&lt;br&gt;Ange lösenord:" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="147.5" y="400" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="147.5" y="310" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="29" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="21" target="25" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="21" value="Input:&lt;br&gt;Lösenord" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="147.5" y="480" width="120" height="50" as="geometry"/>
+                    <mxGeometry x="147.5" y="390" width="120" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="31" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="25" target="30" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="25" value="db-anrop:&lt;br&gt;SELECT password FROM user WHERE username = användarnamn" style="whiteSpace=wrap;html=1;rounded=0;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="120" y="570" width="175" height="70" as="geometry"/>
+                    <mxGeometry x="120" y="480" width="175" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="33" value="" style="edgeStyle=none;html=1;" parent="1" source="30" target="32" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -86,8 +86,8 @@
                 <mxCell id="35" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.582;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="32" target="5" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="620" y="732"/>
-                            <mxPoint x="620" y="-230"/>
+                            <mxPoint x="640" y="642"/>
+                            <mxPoint x="640" y="-250"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -100,19 +100,19 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="30" value="Verifiera lösenord.&lt;br&gt;Är lösenordet samma som i databasen?&lt;br&gt;(Hashat och saltat)" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="82.5" y="660" width="250" height="130" as="geometry"/>
+                    <mxGeometry x="82.5" y="570" width="250" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="32" value="Output:&lt;br&gt;Felaktigt lösenord&lt;br&gt;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="whiteSpace=wrap;html=1;rounded=0;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="402.5" y="682.5" width="170" height="85" as="geometry"/>
+                    <mxGeometry x="400" y="592.5" width="200" height="85" as="geometry"/>
                 </mxCell>
                 <mxCell id="16" value="Output:&lt;br&gt;En användare med användarnamnet {användarnamn} finns inte i db.&lt;br&gt;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="342.5" y="240" width="230" height="100" as="geometry"/>
+                    <mxGeometry x="322.5" y="150" width="237.5" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="41" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="36" target="39" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="36" value="Användare inloggad." style="ellipse;whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="167.5" y="895" width="80" height="80" as="geometry"/>
+                    <mxGeometry x="167.5" y="805" width="80" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="43" value="" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="39" target="42" edge="1">
                     <mxGeometry relative="1" as="geometry">
@@ -270,7 +270,7 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="74" value="Output:&lt;br&gt;&lt;br&gt;PASS&lt;br&gt;Datum: datum&lt;br&gt;Tidsåtgång: tidsåtgång&lt;br&gt;Intensitet: intensitet&lt;br&gt;&lt;br&gt;Övningar:&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;[1] Namn, vikt kg x reps&lt;br&gt;--------------------------------------&lt;br&gt;1. Registrera övning&lt;br&gt;2. Uppdatera övning&lt;br&gt;3. Radera övning&lt;br&gt;&lt;br&gt;4. Redigera passinformation&lt;br&gt;&lt;br&gt;X. Avbryt" style="whiteSpace=wrap;html=1;rounded=0;spacing=8;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="-120" y="2750" width="192.5" height="250" as="geometry"/>
+                    <mxGeometry x="-120" y="2860" width="192.5" height="250" as="geometry"/>
                 </mxCell>
                 <mxCell id="86" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="76" target="85" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -369,7 +369,7 @@
                         <mxPoint x="-120" y="2880" as="targetPoint"/>
                         <Array as="points">
                             <mxPoint x="-1330" y="4420"/>
-                            <mxPoint x="-1330" y="2875"/>
+                            <mxPoint x="-1330" y="2985"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -414,22 +414,22 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="136" value="Output:&lt;br&gt;Ange användarnamn:" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="957.5" y="50" width="170" height="60" as="geometry"/>
+                    <mxGeometry x="748.75" y="-40" width="170" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="157" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="137" target="156" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="137" value="Input:&lt;br&gt;användarnamn" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="957.5" y="130" width="170" height="60" as="geometry"/>
+                    <mxGeometry x="748.75" y="40" width="170" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="140" value="JA" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="138" target="139" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="1102.4619047619049" y="465.0476190476188" as="sourcePoint"/>
+                        <mxPoint x="893.7119047619049" y="375.0476190476188" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="146" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="138" target="144" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="1042.5" y="540" as="sourcePoint"/>
+                        <mxPoint x="833.75" y="450" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="159" value="NEJ" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="146" vertex="1" connectable="0">
@@ -438,34 +438,34 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="138" value="Finns användarnamnet i db?" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="982.5" y="430" width="120" height="150" as="geometry"/>
+                    <mxGeometry x="720" y="330" width="230" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="155" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="139" target="5" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1480" y="505"/>
-                            <mxPoint x="1480" y="-230"/>
+                            <mxPoint x="1280" y="385"/>
+                            <mxPoint x="1280" y="-250"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="139" value="Output:&lt;br&gt;En användare med användarnamnet {användarnamn} finns redan i db.&lt;br&gt;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="1200" y="455" width="230" height="100" as="geometry"/>
+                    <mxGeometry x="991.25" y="335" width="230" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="147" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="144" target="145" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="144" value="Output:&lt;br&gt;Välj lösenord:" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="982.5" y="635" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="773.75" y="480" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="152" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="145" target="151" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="145" value="Input:&lt;br&gt;Lösenord" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="982.5" y="729" width="120" height="50" as="geometry"/>
+                    <mxGeometry x="773.75" y="570" width="120" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="165" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="151" target="166" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="1260" y="888" as="targetPoint"/>
+                        <mxPoint x="1051.25" y="798" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="167" value="NEJ" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="165" vertex="1" connectable="0">
@@ -475,12 +475,12 @@
                 </mxCell>
                 <mxCell id="169" value="JA" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="151" target="173" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="1042.5" y="1000" as="sourcePoint"/>
-                        <mxPoint x="1042.5" y="1027.5" as="targetPoint"/>
+                        <mxPoint x="833.75" y="910" as="sourcePoint"/>
+                        <mxPoint x="833.75" y="937.5" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="151" value="Har inmatat lösenord rätt format?&lt;br&gt;Ej tomt/minst x antal tecken." style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="943.75" y="812.5" width="197.5" height="150" as="geometry"/>
+                    <mxGeometry x="718.75" y="670" width="230" height="120" as="geometry"/>
                 </mxCell>
                 <mxCell id="158" value="JA" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="156" target="138" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -494,35 +494,40 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="156" value="Är input ett giltigt användarnamn?&lt;br&gt;Ej tomt/blanksteg" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="943.75" y="215" width="197.5" height="150" as="geometry"/>
+                    <mxGeometry x="712.5" y="125" width="242.5" height="150" as="geometry"/>
                 </mxCell>
                 <mxCell id="163" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="160" target="5" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1240" y="200"/>
+                            <mxPoint x="1240" y="-250"/>
+                        </Array>
+                    </mxGeometry>
                 </mxCell>
-                <mxCell id="160" value="Output:&lt;br&gt;Användarnamn måste ha ett innehåll.&lt;br&gt;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="1200" y="245" width="210" height="90" as="geometry"/>
+                <mxCell id="160" value="Output:&lt;br&gt;Användarnamn måste ha ett innehåll.&lt;br&gt;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
+                    <mxGeometry x="991.25" y="155" width="228.75" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="168" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="166" target="5" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1480" y="888"/>
-                            <mxPoint x="1480" y="-230"/>
+                            <mxPoint x="1280" y="730"/>
+                            <mxPoint x="1280" y="-250"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="166" value="Output:&lt;br&gt;Lösenord måste bestå av minst x tecken.&lt;br&gt;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="1210" y="842.5" width="210" height="90" as="geometry"/>
+                <mxCell id="166" value="Output:&lt;br&gt;Lösenord måste bestå av minst x tecken.&lt;br&gt;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
+                    <mxGeometry x="991.25" y="685" width="228.75" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="177" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="173" target="5" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1480" y="1075"/>
-                            <mxPoint x="1480" y="-230"/>
+                            <mxPoint x="1280" y="885"/>
+                            <mxPoint x="1280" y="-250"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="173" value="Output:&lt;br&gt;Konto skapat!&lt;br&gt;&lt;br&gt;Tryck på valfri tangent för att fortsätta" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="928.75" y="1040" width="227.5" height="70" as="geometry"/>
+                    <mxGeometry x="720" y="850" width="227.5" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="180" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="178" target="51" edge="1">
                     <mxGeometry relative="1" as="geometry">
@@ -972,7 +977,7 @@
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="-1330" y="4683"/>
-                            <mxPoint x="-1330" y="2875"/>
+                            <mxPoint x="-1330" y="2985"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -1029,7 +1034,7 @@
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="380" y="3905"/>
-                            <mxPoint x="380" y="2875"/>
+                            <mxPoint x="380" y="2985"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -1061,7 +1066,7 @@
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="380" y="3512"/>
-                            <mxPoint x="380" y="2875"/>
+                            <mxPoint x="380" y="2985"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -1075,7 +1080,7 @@
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="380" y="3776"/>
-                            <mxPoint x="380" y="2875"/>
+                            <mxPoint x="380" y="2985"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -1254,35 +1259,39 @@
                         <Array as="points">
                             <mxPoint x="580" y="4780"/>
                             <mxPoint x="-1330" y="4780"/>
-                            <mxPoint x="-1330" y="2875"/>
+                            <mxPoint x="-1330" y="2985"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="393" value="Passinformation uppdaterad!" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" parent="1" vertex="1">
                     <mxGeometry x="520" y="4508" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="398" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;" edge="1" parent="1" source="193" target="397">
+                <mxCell id="398" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;" parent="1" source="193" target="397" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="-340.30999999999995" y="2660" as="sourcePoint"/>
                         <mxPoint x="-23.75" y="2750" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="399" value="JA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="398">
+                <mxCell id="399" value="JA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="398" vertex="1" connectable="0">
                     <mxGeometry x="-0.8791" y="1" relative="1" as="geometry">
                         <mxPoint x="-1" y="26" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="400" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="397" target="74">
+                <mxCell id="400" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="397" target="74" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="-210" y="2770"/>
-                            <mxPoint x="-210" y="2710"/>
-                            <mxPoint x="-24" y="2710"/>
+                            <mxPoint x="-24" y="2770"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="397" value="Registrera pass i db." style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="397" value="Registrera pass i db." style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="-379.68" y="2730" width="78.75" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="401" value="Inloggad meny" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="1010" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="402" value="Passmeny" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="10" y="2820" width="120" height="80" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
