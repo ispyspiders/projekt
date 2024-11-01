@@ -1,6 +1,6 @@
 ﻿// Projektuppgift i kursen Programmering i C#.NET (DT071G) vid Mittuniveristetet
 // Skapad av Kajsa Classon, HT24
-// Beskrivning
+// En konsolapplikation som fungerar som en träningsdagbok.
 
 using System;
 using Microsoft.Data.Sqlite;

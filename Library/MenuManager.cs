@@ -16,10 +16,10 @@ namespace ptApp
         Workout wo = new Workout();
         string? username; // Variabel för användarnamn
         string? password; // Variabel för lösenord
+        int userId; // Variabel för användarId
         string? loggedinUser = null; // Variabel för inloggad användare, null till en början
         int? loggedinUserId = null; // Variabel för inloggad användares id, null till en början
-        int userId;
-        int? activeWorkout = null;
+        int? activeWorkout = null; // Variabel för aktiv workout
 
         private void DrawErrorMessage(string message)
         {
