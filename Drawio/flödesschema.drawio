@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="w7LqoXCT8CnwwwJLQl_I" name="Page-1">
-        <mxGraphModel dx="3027" dy="1330" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
+        <mxGraphModel dx="9293" dy="3223" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#E6E6E6" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -252,12 +252,12 @@
                 </mxCell>
                 <mxCell id="77" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="74" target="76" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="-23.75" y="3005" as="sourcePoint"/>
+                        <mxPoint x="-23.75" y="3205" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="81" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="74" target="80" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="-23.75" y="3005" as="sourcePoint"/>
+                        <mxPoint x="-23.75" y="3205" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="265" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="74" target="232" edge="1">
@@ -270,42 +270,36 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="74" value="Output:&lt;br&gt;&lt;br&gt;PASS&lt;br&gt;Datum: datum&lt;br&gt;Tidsåtgång: tidsåtgång&lt;br&gt;Intensitet: intensitet&lt;br&gt;&lt;br&gt;Övningar:&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;[1] Namn, vikt kg x reps&lt;br&gt;--------------------------------------&lt;br&gt;1. Registrera övning&lt;br&gt;2. Uppdatera övning&lt;br&gt;3. Radera övning&lt;br&gt;&lt;br&gt;4. Redigera passinformation&lt;br&gt;&lt;br&gt;X. Avbryt" style="whiteSpace=wrap;html=1;rounded=0;spacing=8;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="-120" y="2860" width="192.5" height="250" as="geometry"/>
+                    <mxGeometry x="-120" y="3060" width="192.5" height="250" as="geometry"/>
                 </mxCell>
                 <mxCell id="86" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="76" target="85" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="76" value="1. Registrera övning" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-1179.38" y="3180" width="130" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="83" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="80" target="82" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                    <mxGeometry x="-1179.38" y="3380" width="130" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="80" value="X. Avbryt" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="1110" y="3180" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1110" y="3380" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="84" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="82" target="39" edge="1">
+                <mxCell id="84" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="80" target="39" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1320" y="3317"/>
+                            <mxPoint x="1320" y="3410"/>
                             <mxPoint x="1320" y="1190"/>
                         </Array>
                     </mxGeometry>
-                </mxCell>
-                <mxCell id="82" value="" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="1060" y="3287" width="220" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="88" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="85" target="87" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="85" value="Output:&lt;br&gt;Namn på övning:" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-1174.38" y="3287" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="-1174.38" y="3487" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="90" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="87" target="89" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="87" value="Input:&lt;br&gt;Namn" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-1174.38" y="3377" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="-1174.38" y="3577" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="95" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="89" target="94" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -319,19 +313,19 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="89" value="Är namn på övning ej tomt?" style="rhombus;whiteSpace=wrap;html=1;align=center;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-1191.88" y="3467" width="155" height="70" as="geometry"/>
+                    <mxGeometry x="-1191.88" y="3667" width="155" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="98" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="94" target="97" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="94" value="Output:&lt;br&gt;Vikt (i kg):" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-1174.38" y="3587" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="-1174.38" y="3787" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="100" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="97" target="99" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="97" value="Input:&lt;br&gt;vikt" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-1174.38" y="3677" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="-1174.38" y="3877" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="244" value="JA" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="99" target="243" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -340,19 +334,19 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="99" value="Är vikt ej tomt?" style="rhombus;whiteSpace=wrap;html=1;align=center;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-1191.88" y="3760" width="155" height="70" as="geometry"/>
+                    <mxGeometry x="-1191.88" y="3960" width="155" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="105" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="101" target="104" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="101" value="Output:&lt;br&gt;Reps:" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-1174.39" y="3970" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="-1174.39" y="4170" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="107" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="104" target="106" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="104" value="Input:&lt;br&gt;reps" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-1174.3700000000001" y="4062" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="-1174.3700000000001" y="4262" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="252" value="JA" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="106" target="251" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -361,20 +355,20 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="106" value="Är antal reps ej tomt?" style="rhombus;whiteSpace=wrap;html=1;align=center;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-1213.01" y="4160" width="197.27" height="70" as="geometry"/>
+                    <mxGeometry x="-1213.01" y="4360" width="197.27" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="130" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="108" target="74" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="-550" y="4330" as="sourcePoint"/>
-                        <mxPoint x="-120" y="2880" as="targetPoint"/>
+                        <mxPoint x="-550" y="4530" as="sourcePoint"/>
+                        <mxPoint x="-120" y="3080" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="-1330" y="4420"/>
-                            <mxPoint x="-1330" y="2985"/>
+                            <mxPoint x="-1330" y="4620"/>
+                            <mxPoint x="-1330" y="3185"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="108" value="Lägg till övning i pass" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" parent="1" vertex="1">
-                    <mxGeometry x="-1174.365" y="4390" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="-1174.365" y="4590" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="115" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="112" target="113" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -700,19 +694,19 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="232" value="2. Uppdatera övning" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-648.12" y="3180" width="138.12" height="60" as="geometry"/>
+                    <mxGeometry x="-648.12" y="3380" width="138.12" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="264" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="233" target="234" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="233" value="Output:&lt;br&gt;Ange index för den övning du vill uppdatera." style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-639.0600000000001" y="3270" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="-639.0600000000001" y="3470" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="266" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="234" target="235" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="234" value="Input:&lt;br&gt;index" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-639.0600000000001" y="3360" width="120" height="50" as="geometry"/>
+                    <mxGeometry x="-639.0600000000001" y="3560" width="120" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="268" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="235" target="236" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -726,46 +720,46 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="235" value="Finns inmatat index i passet?" style="rhombus;whiteSpace=wrap;html=1;align=center;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-669.0600000000001" y="3440" width="180" height="80" as="geometry"/>
+                    <mxGeometry x="-669.0600000000001" y="3640" width="180" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="267" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="236" target="74" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="236" value="Output:&lt;br&gt;Det finns ingen övning med index {index} i detta pass.&lt;br&gt;&amp;nbsp;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-444.37" y="3430" width="230" height="100" as="geometry"/>
+                    <mxGeometry x="-444.37" y="3630" width="230" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="241" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="238" target="85" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="-740" y="3502"/>
-                            <mxPoint x="-740" y="3317"/>
+                            <mxPoint x="-740" y="3702"/>
+                            <mxPoint x="-740" y="3517"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="238" value="Output:&lt;br&gt;Namn på övning måste anges.&lt;br&gt;&amp;nbsp;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-990" y="3452" width="230" height="100" as="geometry"/>
+                    <mxGeometry x="-990" y="3652" width="230" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="249" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="239" target="94" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="-720" y="3905"/>
-                            <mxPoint x="-720" y="3617"/>
+                            <mxPoint x="-720" y="4105"/>
+                            <mxPoint x="-720" y="3817"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="239" value="Output:&lt;br&gt;Vikt ej numeriskt/positivt tal. Vänligen ange vikt i kg.&lt;br&gt;&amp;nbsp;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-978.75" y="3855" width="228.75" height="100" as="geometry"/>
+                    <mxGeometry x="-978.75" y="4055" width="228.75" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="246" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="242" target="94" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="-720" y="3795"/>
-                            <mxPoint x="-720" y="3617"/>
+                            <mxPoint x="-720" y="3995"/>
+                            <mxPoint x="-720" y="3817"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="242" value="Output:&lt;br&gt;Vikt måste anges. Vänligen ange vikt i kg.&lt;br&gt;&amp;nbsp;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-978.75" y="3745" width="230" height="100" as="geometry"/>
+                    <mxGeometry x="-978.75" y="3945" width="230" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="247" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="243" target="239" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -779,7 +773,7 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="243" value="Är vikt numeriskt och positivt?" style="rhombus;whiteSpace=wrap;html=1;align=center;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-1191.8700000000001" y="3870" width="155" height="70" as="geometry"/>
+                    <mxGeometry x="-1191.8700000000001" y="4070" width="155" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="253" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="251" target="108" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -798,48 +792,48 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="251" value="Är antal reps numeriskt och positivt?" style="rhombus;whiteSpace=wrap;html=1;align=center;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-1213.03" y="4270" width="197.27" height="80" as="geometry"/>
+                    <mxGeometry x="-1213.03" y="4470" width="197.27" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="260" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="255" target="101" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="-710" y="4195"/>
-                            <mxPoint x="-710" y="4000"/>
+                            <mxPoint x="-710" y="4395"/>
+                            <mxPoint x="-710" y="4200"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="255" value="Output:&lt;br&gt;Repetitioner måste anges. Vänligen ange reps som ett positivt heltal.&lt;br&gt;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-960" y="4145" width="230" height="100" as="geometry"/>
+                    <mxGeometry x="-960" y="4345" width="230" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="261" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="256" target="101" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="-1050" y="4000" as="targetPoint"/>
+                        <mxPoint x="-1050" y="4200" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="-710" y="4310"/>
-                            <mxPoint x="-710" y="4000"/>
+                            <mxPoint x="-710" y="4510"/>
+                            <mxPoint x="-710" y="4200"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="256" value="Output:&lt;br&gt;Reps ej numeriskt/positivt tal. Vänligen ange reps som ett positivt heltal.&lt;br&gt;&amp;nbsp;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-960" y="4260" width="228.75" height="100" as="geometry"/>
+                    <mxGeometry x="-960" y="4460" width="228.75" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="282" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="270" target="271" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="270" value="Output:&lt;br&gt;Namn på övning:" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-639.06" y="3552" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="-639.06" y="3752" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="283" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="271" target="272" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="271" value="Input:&lt;br&gt;Namn" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-639.06" y="3642" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="-639.06" y="3842" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="272" value="Är namn på övning ej tomt?" style="rhombus;whiteSpace=wrap;html=1;align=center;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-656.56" y="3732" width="155" height="70" as="geometry"/>
+                    <mxGeometry x="-656.56" y="3932" width="155" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="273" value="Output:&lt;br&gt;Namn på övning måste anges.&lt;br&gt;&amp;nbsp;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-458.1199999999999" y="3717" width="230" height="100" as="geometry"/>
+                    <mxGeometry x="-458.1199999999999" y="3917" width="230" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="274" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="272" target="277" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -853,7 +847,7 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="277" value="Output:&lt;br&gt;Vikt (i kg):" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-639.06" y="3845" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="-639.06" y="4045" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="278" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="277" target="279" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -862,45 +856,45 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="279" value="Input:&lt;br&gt;vikt" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-639.06" y="3940" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="-639.06" y="4140" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="280" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="273" target="270" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="-208.1199999999999" y="3767"/>
-                            <mxPoint x="-208.1199999999999" y="3582"/>
+                            <mxPoint x="-208.1199999999999" y="3967"/>
+                            <mxPoint x="-208.1199999999999" y="3782"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="284" value="Är vikt ej tomt?" style="rhombus;whiteSpace=wrap;html=1;align=center;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-656.5600000000002" y="4023" width="155" height="70" as="geometry"/>
+                    <mxGeometry x="-656.5600000000002" y="4223" width="155" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="285" value="NEJ" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="284" target="286" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="286" value="Output:&lt;br&gt;Vikt måste anges. Vänligen ange vikt i kg.&lt;br&gt;&amp;nbsp;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-445.72" y="4008" width="230" height="100" as="geometry"/>
+                    <mxGeometry x="-445.72" y="4208" width="230" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="287" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="286" target="277" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="-521.3500000000001" y="3880" as="targetPoint"/>
+                        <mxPoint x="-521.3500000000001" y="4080" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="-187" y="4058"/>
-                            <mxPoint x="-187" y="3875"/>
+                            <mxPoint x="-187" y="4258"/>
+                            <mxPoint x="-187" y="4075"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="288" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="289" target="277" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="-521.3500000000001" y="3880" as="targetPoint"/>
+                        <mxPoint x="-521.3500000000001" y="4080" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="-187" y="4168"/>
-                            <mxPoint x="-187" y="3875"/>
+                            <mxPoint x="-187" y="4368"/>
+                            <mxPoint x="-187" y="4075"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="289" value="Output:&lt;br&gt;Vikt ej numeriskt/positivt tal. Vänligen ange vikt i kg.&lt;br&gt;&amp;nbsp;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-445.72" y="4118" width="228.75" height="100" as="geometry"/>
+                    <mxGeometry x="-445.72" y="4318" width="228.75" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="290" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="292" target="289" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -911,7 +905,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="292" value="Är vikt numeriskt och positivt?" style="rhombus;whiteSpace=wrap;html=1;align=center;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-656.5600000000002" y="4133" width="155" height="70" as="geometry"/>
+                    <mxGeometry x="-656.5600000000002" y="4333" width="155" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="293" value="JA" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="284" target="292" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -920,20 +914,20 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="295" value="Output:&lt;br&gt;Reps:" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-639.0600000000002" y="4230" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="-639.0600000000002" y="4430" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="296" value="Input:&lt;br&gt;reps" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-639.0600000000002" y="4330" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="-639.0600000000002" y="4530" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="297" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="295" target="296" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="298" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="307" target="295" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="-516.97" y="4263" as="targetPoint"/>
+                        <mxPoint x="-516.97" y="4463" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="-177" y="4573"/>
-                            <mxPoint x="-177" y="4260"/>
+                            <mxPoint x="-177" y="4773"/>
+                            <mxPoint x="-177" y="4460"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -942,21 +936,21 @@
                 </mxCell>
                 <mxCell id="300" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="301" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="-519" y="4260" as="targetPoint"/>
+                        <mxPoint x="-519" y="4460" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="-177" y="4458"/>
-                            <mxPoint x="-177" y="4260"/>
+                            <mxPoint x="-177" y="4658"/>
+                            <mxPoint x="-177" y="4460"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="301" value="Output:&lt;br&gt;Repetitioner måste anges. Vänligen ange reps som ett positivt heltal.&lt;br&gt;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-426.97" y="4408" width="230" height="100" as="geometry"/>
+                    <mxGeometry x="-426.97" y="4608" width="230" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="302" value="NEJ" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="303" target="301" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="303" value="Är antal reps ej tomt?" style="rhombus;whiteSpace=wrap;html=1;align=center;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-677.69" y="4423" width="197.27" height="70" as="geometry"/>
+                    <mxGeometry x="-677.69" y="4623" width="197.27" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="304" value="JA" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="303" target="305" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -965,24 +959,24 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="305" value="Är antal reps numeriskt och positivt?" style="rhombus;whiteSpace=wrap;html=1;align=center;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-677.69" y="4533" width="197.27" height="80" as="geometry"/>
+                    <mxGeometry x="-677.69" y="4733" width="197.27" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="306" value="NEJ" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="1" vertex="1" connectable="0">
-                    <mxGeometry x="-462.73" y="4571" as="geometry"/>
+                    <mxGeometry x="-462.73" y="4771" as="geometry"/>
                 </mxCell>
                 <mxCell id="307" value="Output:&lt;br&gt;Reps ej numeriskt/positivt tal. Vänligen ange reps som ett positivt heltal.&lt;br&gt;&amp;nbsp;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-426.97" y="4523" width="228.75" height="100" as="geometry"/>
+                    <mxGeometry x="-426.97" y="4723" width="228.75" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="313" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="308" target="74" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="-1330" y="4683"/>
-                            <mxPoint x="-1330" y="2985"/>
+                            <mxPoint x="-1330" y="4883"/>
+                            <mxPoint x="-1330" y="3185"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="308" value="Övning uppdaterad!" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" parent="1" vertex="1">
-                    <mxGeometry x="-639.0550000000001" y="4653" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="-639.0550000000001" y="4853" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="309" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="305" target="308" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -994,52 +988,52 @@
                 </mxCell>
                 <mxCell id="314" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="321" target="316" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="-25.035238095238014" y="3270" as="sourcePoint"/>
+                        <mxPoint x="-25.035238095238014" y="3470" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="315" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="316" target="318" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="316" value="Output:&lt;br&gt;Ange index för den övning du vill radera." style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-84.06" y="3300" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="-84.06" y="3500" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="327" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="318" target="326" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="318" value="Input:&lt;br&gt;index" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-84.06" y="3390" width="120" height="50" as="geometry"/>
+                    <mxGeometry x="-84.06" y="3590" width="120" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="321" value="3. Radera övning" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-93.12" y="3180" width="138.12" height="60" as="geometry"/>
+                    <mxGeometry x="-93.12" y="3380" width="138.12" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="335" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="322" target="344" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="160" y="3752" as="targetPoint"/>
+                        <mxPoint x="160" y="3952" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="336" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="322" target="341" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="-55" y="3752" as="targetPoint"/>
+                        <mxPoint x="-55" y="3952" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="322" value="Output:&lt;br&gt;Är du säker på att du vill radera övningen med index&amp;nbsp; {index}?&lt;br&gt;&lt;br&gt;1. RADERA&lt;br&gt;2. AVBRYT" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-115.31" y="3587" width="182.5" height="103" as="geometry"/>
+                    <mxGeometry x="-115.31" y="3787" width="182.5" height="103" as="geometry"/>
                 </mxCell>
                 <mxCell id="338" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="341" target="325" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="-55" y="3802" as="sourcePoint"/>
+                        <mxPoint x="-55" y="4002" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="347" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="325" target="74" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="380" y="3905"/>
-                            <mxPoint x="380" y="2985"/>
+                            <mxPoint x="380" y="4105"/>
+                            <mxPoint x="380" y="3185"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="325" value="Output:&lt;br&gt;Pass {index} raderat.&amp;nbsp;&lt;br&gt;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-170" y="3855" width="230" height="100" as="geometry"/>
+                    <mxGeometry x="-170" y="4055" width="230" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="328" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="326" target="322" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -1051,7 +1045,7 @@
                 </mxCell>
                 <mxCell id="330" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="326" target="329" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="127.5" y="3512" as="targetPoint"/>
+                        <mxPoint x="127.5" y="3712" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="331" value="NEJ" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="330" vertex="1" connectable="0">
@@ -1060,50 +1054,50 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="326" value="Finns inmatat index i passet?" style="rhombus;whiteSpace=wrap;html=1;align=center;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-113.75" y="3472" width="180" height="80" as="geometry"/>
+                    <mxGeometry x="-113.75" y="3672" width="180" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="345" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="329" target="74" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="380" y="3512"/>
-                            <mxPoint x="380" y="2985"/>
+                            <mxPoint x="380" y="3712"/>
+                            <mxPoint x="380" y="3185"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="329" value="Output:&lt;br&gt;Det finns ingen övning med index {index} i detta pass.&lt;br&gt;&amp;nbsp;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="120" y="3462" width="230" height="100" as="geometry"/>
+                    <mxGeometry x="120" y="3662" width="230" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="341" value="1. RADERA" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="-115" y="3752" width="120" height="50" as="geometry"/>
+                    <mxGeometry x="-115" y="3952" width="120" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="346" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="344" target="74" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="380" y="3776"/>
-                            <mxPoint x="380" y="2985"/>
+                            <mxPoint x="380" y="3976"/>
+                            <mxPoint x="380" y="3185"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="344" value="&lt;span style=&quot;&quot;&gt;2. AVBRYT&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="92.5" y="3752" width="120" height="48" as="geometry"/>
+                    <mxGeometry x="92.5" y="3952" width="120" height="48" as="geometry"/>
                 </mxCell>
                 <mxCell id="367" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="348" target="351" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="348" value="4. Redigera passinformation" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="510.9399999999999" y="3180" width="138.12" height="60" as="geometry"/>
+                    <mxGeometry x="510.9399999999999" y="3380" width="138.12" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="368" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="351" target="352" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="351" value="Output:&lt;br&gt;Datum för pass (DD-MM-YYYY):" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="519.9999999999999" y="3280" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="519.9999999999999" y="3480" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="369" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="352" target="353" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="352" value="Input:&lt;br&gt;DD-MM-YYYY" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="520" y="3377" width="120" height="50" as="geometry"/>
+                    <mxGeometry x="520" y="3577" width="120" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="370" value="NEJ" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="353" target="366" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -1112,19 +1106,19 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="353" value="Är inmatat datum ej tomt/korrektformat?" style="rhombus;whiteSpace=wrap;html=1;align=center;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="490" y="3466" width="180" height="80" as="geometry"/>
+                    <mxGeometry x="490" y="3666" width="180" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="373" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="354" target="355" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="354" value="&lt;span style=&quot;&quot;&gt;Output:&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Tidsåtgång (i minuter):&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;spacing=8;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="500" y="3586" width="160" height="60" as="geometry"/>
+                    <mxGeometry x="500" y="3786" width="160" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="374" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="355" target="356" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="355" value="Input:&lt;br&gt;60" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="520" y="3686" width="120" height="50" as="geometry"/>
+                    <mxGeometry x="520" y="3886" width="120" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="375" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="356" target="357" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -1143,7 +1137,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="356" value="Har inmatad tidsåtgång ett innehåll?&lt;br&gt;(ej tom sträng)" style="rhombus;whiteSpace=wrap;html=1;align=center;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="490" y="3784" width="180" height="80" as="geometry"/>
+                    <mxGeometry x="490" y="3984" width="180" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="377" value="NEJ" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="357" target="364" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -1157,19 +1151,19 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="357" value="Är inmatad tidsåtgång ett nummer?" style="rhombus;whiteSpace=wrap;html=1;align=center;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="491.25" y="3906" width="177.5" height="80" as="geometry"/>
+                    <mxGeometry x="491.25" y="4106" width="177.5" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="382" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="358" target="359" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="358" value="&lt;span style=&quot;&quot;&gt;Output:&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Intensitet (Låg/Medel/Hög):&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;spacing=8;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="500" y="4033" width="160" height="60" as="geometry"/>
+                    <mxGeometry x="500" y="4233" width="160" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="383" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="359" target="360" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="359" value="Input:&lt;br&gt;intensitet" style="whiteSpace=wrap;html=1;align=left;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="520" y="4138" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="520" y="4338" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="384" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="360" target="361" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -1188,7 +1182,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="360" value="Har intensitet ett innehåll?" style="rhombus;whiteSpace=wrap;html=1;align=center;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="474.37" y="4236" width="211.25" height="80" as="geometry"/>
+                    <mxGeometry x="474.37" y="4436" width="211.25" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="392" value="NEJ" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="361" target="362" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -1197,74 +1191,74 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="361" value="Är intensitet ett tillåtet värde?" style="rhombus;whiteSpace=wrap;html=1;align=center;rounded=0;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="472.81" y="4376" width="214.38" height="70" as="geometry"/>
+                    <mxGeometry x="472.81" y="4576" width="214.38" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="391" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="362" target="358" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="980" y="4411"/>
-                            <mxPoint x="980" y="4063"/>
+                            <mxPoint x="980" y="4611"/>
+                            <mxPoint x="980" y="4263"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="362" value="Output:&lt;br&gt;Ogiltig intensitetsnivå. Vänligen ange intensitetsnivå: låg, medel, eller hög&lt;br&gt;&amp;nbsp;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="727.5" y="4361" width="230" height="100" as="geometry"/>
+                    <mxGeometry x="727.5" y="4561" width="230" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="390" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="363" target="358" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="980" y="4276"/>
-                            <mxPoint x="980" y="4063"/>
+                            <mxPoint x="980" y="4476"/>
+                            <mxPoint x="980" y="4263"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="363" value="Output:&lt;br&gt;Intensitet måste anges. Vänligen ange intensitetsnivå: låg, medel, eller hög&lt;br&gt;&amp;nbsp;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="727.5" y="4226" width="230" height="100" as="geometry"/>
+                    <mxGeometry x="727.5" y="4426" width="230" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="389" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="364" target="354" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="980" y="3946"/>
-                            <mxPoint x="980" y="3616"/>
+                            <mxPoint x="980" y="4146"/>
+                            <mxPoint x="980" y="3816"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="364" value="Output:&lt;br&gt;Tidsåtgång ej numeriskt. Vänligen ange tidsåtgång i hela minuter.&lt;br&gt;&amp;nbsp;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="727.5" y="3896" width="230" height="100" as="geometry"/>
+                    <mxGeometry x="727.5" y="4096" width="230" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="388" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="365" target="354" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="980" y="3824"/>
-                            <mxPoint x="980" y="3616"/>
+                            <mxPoint x="980" y="4024"/>
+                            <mxPoint x="980" y="3816"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="365" value="Output:&lt;br&gt;Tidsåtgång måste anges. Vänligen ange tidsåtgång i hela minuter.&lt;br&gt;&amp;nbsp;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="727.5" y="3774" width="230" height="100" as="geometry"/>
+                    <mxGeometry x="727.5" y="3974" width="230" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="371" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="366" target="351" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="980" y="3506"/>
-                            <mxPoint x="980" y="3310"/>
+                            <mxPoint x="980" y="3706"/>
+                            <mxPoint x="980" y="3510"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="366" value="Output:&lt;br&gt;Datum måste anges i formatet DD-MM-YYYY.&lt;br&gt;&amp;nbsp;&lt;br&gt;Tryck på valfri tangent för att fortsätta." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=left;strokeColor=default;fillColor=default;spacing=8;" parent="1" vertex="1">
-                    <mxGeometry x="727.5" y="3456" width="230" height="100" as="geometry"/>
+                    <mxGeometry x="727.5" y="3656" width="230" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="395" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="393" target="74" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="580" y="4780"/>
-                            <mxPoint x="-1330" y="4780"/>
-                            <mxPoint x="-1330" y="2985"/>
+                            <mxPoint x="580" y="4980"/>
+                            <mxPoint x="-1330" y="4980"/>
+                            <mxPoint x="-1330" y="3185"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="393" value="Passinformation uppdaterad!" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;align=center;strokeColor=default;fillColor=default;" parent="1" vertex="1">
-                    <mxGeometry x="520" y="4508" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="520" y="4708" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="398" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;" parent="1" source="193" target="397" edge="1">
                     <mxGeometry relative="1" as="geometry">
@@ -1287,11 +1281,17 @@
                 <mxCell id="397" value="Registrera pass i db." style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="-379.68" y="2730" width="78.75" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="401" value="Inloggad meny" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="401" value="Inloggad meny" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="270" y="1010" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="402" value="Passmeny" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="10" y="2820" width="120" height="80" as="geometry"/>
+                <mxCell id="402" value="Passmeny" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="3020" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="404" value="" style="line;strokeWidth=2;html=1;dashed=1;dashPattern=8 8;" vertex="1" parent="1">
+                    <mxGeometry x="-1272" y="975" width="3040" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="405" value="" style="line;strokeWidth=2;html=1;dashed=1;dashPattern=8 8;" vertex="1" parent="1">
+                    <mxGeometry x="-1262" y="2938" width="3040" height="10" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
